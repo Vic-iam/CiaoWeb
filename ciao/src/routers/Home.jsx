@@ -7,8 +7,8 @@ function Home(){
         <>
         
         <Navbar />
-        
-        <h1>His</h1>
+
+         <h1>Hi</h1>
 
         </>
     )
