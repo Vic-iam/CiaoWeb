@@ -11,16 +11,20 @@ function Navbar() {
             <BrowserRouter>
                 <header className={style.containerHeader}>
                     <nav className={style.containerNav}>
-                        <div className={style.titleStyle }>
+                        <div className={style.titleStyle}>
                             <h1>Ciao</h1><span>Bella</span>
                         </div>
-                        <div className={`${style.containerLink} ${isOpen && "open"}`}>
+                        <div className={`${style.containerLink} ${isOpen && style.open}`}>
                             <li><Link to="/Home">Inicio</Link></li>
                             <li><Link to="/Procedimientos">Procedimientos</Link></li>
                             <li><Link to="/Nosotros">Nosotros</Link></li>
                             <li><Link to="/Contactos">Contactos</Link></li>
+                            <div className={style.titleToggle}>
+                                <p>CiaoBella</p>
+                            </div>
                         </div>
-                        <div className={`${style.itemToggle} ${isOpen && "open"}`} onClick={() => setIsOpen(!isOpen)}>
+
+                        <div className={`${style.itemToggle} ${isOpen && style.open}`} onClick={() => setIsOpen(!isOpen)}>
                             <span></span>
                             <span></span>
                             <span></span>
