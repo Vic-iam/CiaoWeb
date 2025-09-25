@@ -1,15 +1,13 @@
 import './App.css'
-import Navbar from './components/Navbar'
+import Home from './routers/Home'
 
 function App() {
 
   return (
     <> 
 
-    <Navbar />
+    <Home />
 
-    <h1>Hi</h1>
- 
     </>
   )
 }
