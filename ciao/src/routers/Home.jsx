@@ -1,6 +1,6 @@
 'use client'
 import Navbar from "../components/Navbar"
-import style from "./Home.module.css"
+import style from "./style/Home.module.css"
 import DarkVeil from "../components/Darkveil"
 
 function Home() {
