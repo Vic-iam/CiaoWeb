@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #A813B7;
+    background-color: #4B004F;
     height: 100px;
     width: 100%;
     box-shadow: 0 0 0 10px white;
@@ -65,6 +65,7 @@
         height: -webkit-fill-available;
         transform: translateX(-100%);
         transition: 0.3s ease all;
+        z-index: 2;
     }
 
     .containerLink a{

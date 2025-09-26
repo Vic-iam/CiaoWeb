@@ -17,8 +17,8 @@
 
 .content {
   position: relative;
-  z-index: 1; /* encima del canvas */
-  color: white;
+  z-index: 1; 
+  color: rgb(161, 23, 23);
   text-align: center;
-  padding-top: 100px;
+  padding-top: 200px;
 }
