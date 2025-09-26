@@ -8,8 +8,6 @@ function Home() {
     return (
         <>
 
-            <Navbar />
-
             <div className={style.appContainer}>
                 <DarkVeil
                     className={style.darkveilCanvas}
@@ -26,6 +24,8 @@ function Home() {
                     <p>La elegancia es un eco, no un grito.</p>
                 </div>
             </div>
+
+            <h2>Hola</h2>
 
         </>
     )

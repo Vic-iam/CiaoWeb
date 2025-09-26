@@ -1,24 +1,29 @@
-import { BrowserRouter, Link } from 'react-router-dom'
 import { useState } from 'react'
 import style from "./Navbar.module.css"
+import { Link } from 'react-router-dom'
 
 function Navbar() {
 
     const [isOpen, setIsOpen] = useState(false)
 
-    return (
-        <>
-            <BrowserRouter>
+    const handleLinkClick = () => {
+        setIsOpen(false)  
+    }
+
+        return (
+            <>
                 <header className={style.containerHeader}>
                     <nav className={style.containerNav}>
                         <div className={style.titleStyle}>
                             <h1>Ciao</h1><span>Bella</span>
                         </div>
                         <div className={`${style.containerLink} ${isOpen && style.open}`}>
-                            <li><Link to="/Home">Inicio</Link></li>
-                            <li><Link to="/Procedimientos">Procedimientos</Link></li>
-                            <li><Link to="/Nosotros">Nosotros</Link></li>
-                            <li><Link to="/Contactos">Contactos</Link></li>
+
+                            <li><Link to="/" onClick={handleLinkClick}>Inicio</Link></li>
+                            <li><Link to="/procedimientos" onClick={handleLinkClick}>Procedimientos</Link></li>
+                            <li><Link to="/nosotros" onClick={handleLinkClick}>Nosotros</Link></li>
+                            <li><Link to="/contactos" onClick={handleLinkClick}>Contactos</Link></li>
+
                             <div className={style.titleToggle}>
                                 <p>CiaoBella</p>
                             </div>
@@ -31,9 +36,9 @@ function Navbar() {
                         </div>
                     </nav>
                 </header>
-            </BrowserRouter>
-        </>
-    )
-}
+            </>
+        )
+    }
 
-export default Navbar
+
+    export default Navbar
