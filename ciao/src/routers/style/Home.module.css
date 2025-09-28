@@ -5,7 +5,7 @@
     overflow: hidden;
 }
 
-body{
+body {
     background-color: black;
 }
 
@@ -36,9 +36,16 @@ body{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 50px;
-    padding: 20px;
+    padding: 10px;
     margin: 5px;
+}
+
+.containerDescription {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .image img {
@@ -62,51 +69,12 @@ body{
 }
 
 
-.btn {
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    border-radius: 10px;
-    transition: 0.4s;
-    cursor: pointer;
+.description h1 {
+    font-size: 2.4rem;
+    font-family: "Lavishly Yours", cursive;
+    font-weight: 200;
+    font-style: normal;
 }
-
-.btn:hover{
-    background-color: black;
-    transition: 0.4s;
-}
-
-
-
-.btn h1{
-  font-family: "Pacifico", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.btn1{
-    text-align: center;
-    height: 60px;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-}
-
-
-
-.btn a {
-    font-size: 1.2rem;
-    color: black;
-    text-decoration: none;
-    transition: 0.4s;
-}
-
-.btn a:hover{
-    color: white;
-}
-
 
 .description p {
     font-size: 1.2rem;
@@ -117,8 +85,32 @@ body{
 
 }
 
+.btn {
+    padding: 20px;
+}
 
+.btn1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 60px;
+    width: 250px;
+    border: 3px solid white;
+    transition: all 0.2s;
+}
 
+.btn1:hover {
+    background-color: black;
+    color: white;
+}
+
+.btn a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+
+}
 
 @media (max-width:760px) {
 
@@ -138,8 +130,12 @@ body{
         font-size: 1.4rem;
     }
 
-    .description p{
-        font-size: 2.3rem;
+    .description h1 {
+        font-size: 2.5rem;
+    }
+
+    .description p {
+        font-size: 1.5rem;
         text-align: center;
     }
 

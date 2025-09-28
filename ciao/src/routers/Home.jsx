@@ -60,39 +60,43 @@ function Home() {
 
             <div className={style.containerProc}>
 
-                <div className={style.description}>
+                <div className={style.containerDescription}>
 
-                    <div className={style.image}>
-                        <img src={Cejas} alt="image" />
+                    <div className={style.description}>
+
+                        <div className={style.image}>
+                            <img src={Cejas} alt="image" />
+                        </div>
+
+                        <h1>Cejas</h1>
+
+                        <p>"Transforma tu estilo con cejas perfectamente diseñadas"</p>
+
                     </div>
 
-                    <h1>Cejas</h1>
+                    <div className={style.description}>
 
-                    <p>"Transforma tu estilo con cejas perfectamente diseñadas"</p>
+                        <div className={style.image}>
+                            <img src={legs} alt="image" />
+                        </div>
 
-                </div>
+                        <h1>Depilacion</h1>
 
-                <div className={style.description}>
+                        <p>"La vida no es perfecta, pero tu piel puede serlo"</p>
 
-                    <div className={style.image}>
-                        <img src={legs} alt="image" />
                     </div>
 
-                    <h1>Depilacion</h1>
+                    <div className={style.description}>
 
-                    <p>"La vida no es perfecta, pero tu piel puede serlo"</p>
+                        <div className={style.image}>
+                            <img src={manic} alt="image" />
+                        </div>
 
-                </div>
+                        <h1>Manicura</h1>
 
-                <div className={style.description}>
+                        <p>"Cada uña es una pequeña ventana a tu creatividad"</p>
 
-                    <div className={style.image}>
-                        <img src={manic} alt="image" />
                     </div>
-
-                    <h1>Manicura</h1>
-
-                    <p>"Cada uña es una pequeña ventana a tu creatividad"</p>
 
                 </div>
 
@@ -101,6 +105,7 @@ function Home() {
                 </div>
 
             </div>
+
 
 
 
