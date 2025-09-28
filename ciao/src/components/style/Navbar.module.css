@@ -34,12 +34,12 @@
 }
 
 .titleStyle span {
-    font-size: 2.3rem;
+    font-size: 4rem;
     color: pink;
 }
 
 .titleStyle h1 {
-    font-size: 2.1rem;
+    font-size: 4rem;
 }
 
 .itemToggle {
@@ -76,6 +76,14 @@
         color: black;
         padding: 20px;
         
+    }
+
+    .titleStyle h1{
+        font-size: 2.5rem;
+    }
+
+    .titleStyle span{
+        font-size: 2.5rem;
     }
 
    .open {
