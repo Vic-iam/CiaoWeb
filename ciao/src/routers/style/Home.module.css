@@ -50,7 +50,7 @@ body{
 
 .image {
     width: 550px;
-    height: 450px;
+    height: 600px;
 }
 
 .description {
@@ -61,17 +61,24 @@ body{
     gap: 5px;
 }
 
-.btn button {
+
+.btn {
     background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
-    padding: 10px;
-    height: 60px;
     border-radius: 10px;
-    transition: 0.2s;
+    transition: 0.4s;
+    cursor: pointer;
 }
+
+.btn:hover{
+    background-color: black;
+    transition: 0.4s;
+}
+
+
 
 .btn h1{
   font-family: "Pacifico", cursive;
@@ -79,27 +86,31 @@ body{
   font-style: normal;
 }
 
-.btn button:hover{
-    background-color: black;
-    transition: 0.2s;
+.btn1{
+    text-align: center;
+    height: 60px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
 }
+
+
 
 .btn a {
     font-size: 1.2rem;
     color: black;
     text-decoration: none;
-    transition: 0.2s;
+    transition: 0.4s;
 }
 
 .btn a:hover{
-   transition: 0.2s;
-   color: white;
+    color: white;
 }
+
 
 .description p {
     font-size: 1.2rem;
     padding: 10px;
-    color: #E28AFF;
     font-family: "Lavishly Yours", cursive;
     font-weight: 400;
     font-style: normal;

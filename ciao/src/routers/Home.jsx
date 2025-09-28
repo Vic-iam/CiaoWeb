@@ -97,7 +97,7 @@ function Home() {
                 </div>
 
                 <div className={style.btn}>
-                    <button><Link to="/procedimientos">Ver servicios</Link></button>
+                    <Link className={style.btn1} to="/procedimientos">Ver servicios</Link>
                 </div>
 
             </div>
