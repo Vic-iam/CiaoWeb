@@ -2,6 +2,11 @@
 import style from "./style/Home.module.css"
 import SplitText from "../components/SplitText"
 import DarkVeil from "../components/Darkveil"
+import Cejas from "../assets/eyes-407382_1280.jpg"
+import legs from "../assets/hermosas-piernas.jpg"
+import manic from "../assets/cosmetic-1471346_1280.jpg"
+import { Link } from "react-router-dom"
+
 
 function Home() {
 
@@ -9,8 +14,20 @@ function Home() {
     const handleAnimationComplete = () => {
     };
 
+    const insideStyles = {
+        padding: "20",
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "traslate(-50%, -50%)"
+    }
+
+
     return (
         <>
+
+
+
 
             <div className={style.appContainer}>
                 <DarkVeil
@@ -41,10 +58,55 @@ function Home() {
 
             </div>
 
-            <h2>Hola</h2>
+            <div className={style.containerProc}>
+
+                <div className={style.description}>
+
+                    <div className={style.image}>
+                        <img src={Cejas} alt="image" />
+                    </div>
+
+                    <h1>Cejas</h1>
+
+                    <p>"Transforma tu estilo con cejas perfectamente diseñadas"</p>
+
+                </div>
+
+                <div className={style.description}>
+
+                    <div className={style.image}>
+                        <img src={legs} alt="image" />
+                    </div>
+
+                    <h1>Depilacion</h1>
+
+                    <p>"La vida no es perfecta, pero tu piel puede serlo"</p>
+
+                </div>
+
+                <div className={style.description}>
+
+                    <div className={style.image}>
+                        <img src={manic} alt="image" />
+                    </div>
+
+                    <h1>Manicura</h1>
+
+                    <p>"Cada uña es una pequeña ventana a tu creatividad"</p>
+
+                </div>
+
+                <div className={style.btn}>
+                    <button><Link to="/procedimientos">Ver servicios</Link></button>
+                </div>
+
+            </div>
+
+
+
 
         </>
     )
 }
 
-export default Home
+export default Home;

@@ -1,5 +1,4 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
 
 function Contactos() {
     return (
@@ -14,4 +13,4 @@ function Contactos() {
     )
 }
 
-export default Contactos
+export default Contactos;
