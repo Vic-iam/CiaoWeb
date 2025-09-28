@@ -5,7 +5,7 @@
     background-color: #4B004F;
     height: 100px;
     width: 100%;
-    box-shadow: 0 0 0 10px white;
+    z-index: 2;
 }
 
 .containerLink li {
@@ -52,8 +52,12 @@
 
 @media (max-width: 760px) {
 
+    .containerNav{
+        position: fixed;
+    }
+
     .containerLink {
-        position: absolute;
+        position: fixed;
         top: 100px;
         left: 0;
         background-color: #760481;
@@ -65,7 +69,7 @@
         height: -webkit-fill-available;
         transform: translateX(-100%);
         transition: 0.3s ease all;
-        z-index: 2;
+        z-index: 3;
     }
 
     .containerLink a{

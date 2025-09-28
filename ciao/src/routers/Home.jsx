@@ -1,9 +1,13 @@
 'use client'
-import Navbar from "../components/Navbar"
 import style from "./style/Home.module.css"
+import SplitText from "../components/SplitText"
 import DarkVeil from "../components/Darkveil"
 
 function Home() {
+
+
+    const handleAnimationComplete = () => {
+    };
 
     return (
         <>
@@ -19,10 +23,22 @@ function Home() {
                     resolutionScale={1}
                 />
 
-                <div className={style.content}>
-                    <h1>¡Ciao bella! Despierta tu belleza interior en un lugar dedicado a ti.✨</h1>
-                    <p>La elegancia es un eco, no un grito.</p>
-                </div>
+                <SplitText
+                    text="¡Ciao bella! Despierta tu belleza interior en un lugar dedicado a ti.✨"
+                    className={style.content}
+                    delay={30}
+                    duration={0.6}
+                    ease="power3.out"
+                    splitType="chars"
+                    from={{ opacity: 0, y: 40 }}
+                    to={{ opacity: 1, y: 0 }}
+                    threshold={0.1}
+                    rootMargin="-100px"
+                    textAlign="center"
+                    onLetterAnimationComplete={handleAnimationComplete}
+                />
+
+
             </div>
 
             <h2>Hola</h2>

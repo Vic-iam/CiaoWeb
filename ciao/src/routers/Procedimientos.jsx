@@ -6,8 +6,8 @@ function Procedimientos() {
 
         <>
 
-
             <div>Contactos</div>
+            
         </>
 
     )

@@ -17,36 +17,24 @@
 
 .content {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
+    font-size: 3.2rem;
     transform: translate(-50%, -50%);
     z-index: 1;
     color: white;
     text-align: center;
 }
 
-.content h1 {
-    font-size: 3rem;
-}
-
-.content p {
-    font-size: 2rem;
-}
 
 @media (max-width:760px) {
 
     .content {
         position: absolute;
-        top: 40%;
+        top: 50%;
         left: 50%;
-    }
-
-    .content h1 {
         font-size: 2rem;
     }
 
-    .content p {
-        font-size: 1rem;
-    }
 
 }
