@@ -56,8 +56,8 @@ body {
 }
 
 .image {
-    width: 550px;
-    height: 600px;
+    width: 450px;
+    height: 500px;
 }
 
 .description {
@@ -122,8 +122,8 @@ body {
     }
 
     .image {
-        width: 350px;
-        height: 350px;
+        width: 320px;
+        height: 320px;
     }
 
     .btn a {
