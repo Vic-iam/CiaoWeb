@@ -1,0 +1,39 @@
+.footerColumns {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: #290245;
+  color: #eee;
+  padding: 30px 15px;
+  z-index: 2;
+}
+
+.col {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+
+.col h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.col a {
+  color: #ddd;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.col a:hover {
+  color: purple;
+}
+
+.copy {
+  background-color: #000;
+  text-align: center;
+  padding: 10px;
+  color: #aaa;
+  font-size: 12px;
+}

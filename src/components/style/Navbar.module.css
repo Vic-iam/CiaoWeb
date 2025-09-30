@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #4B004F;
+    background-color: #290245;
     height: 100px;
     width: 100%;
     z-index: 2;
@@ -60,7 +60,7 @@
         position: fixed;
         top: 100px;
         left: 0;
-        background-color: #760481;
+        background-color: #3C0366;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -73,7 +73,6 @@
     }
 
     .containerLink a{
-        color: black;
         padding: 20px;
         
     }

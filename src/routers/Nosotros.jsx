@@ -7,7 +7,7 @@ function Nosotros() {
         <>
 
 
-            <div>Contactos</div>
+            <div>Nosotros</div>
 
         </>
     )
