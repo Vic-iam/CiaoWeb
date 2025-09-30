@@ -6,6 +6,8 @@ import Cejas from "../assets/eyes-407382_1280.jpg"
 import legs from "../assets/hermosas-piernas.jpg"
 import manic from "../assets/cosmetic-1471346_1280.jpg"
 import { Link } from "react-router-dom"
+import Orb from "../components/Orb"
+import { col } from "motion/react-client"
 
 
 function Home() {
@@ -14,17 +16,8 @@ function Home() {
     const handleAnimationComplete = () => {
     };
 
-    const insideStyles = {
-        padding: "20",
-        position: "absolute",
-        top: "50%",
-        left: "50%",
-        transform: "traslate(-50%, -50%)"
-    }
-
-
     return (
-        <>
+        <div className={style.homeBody}>
 
 
 
@@ -107,10 +100,21 @@ function Home() {
             </div>
 
 
+            <div className={style.orbContainer}>
+                <Orb
+                    hoverIntensity={0}
+                    rotateOnHover={true}
+                    hue={280}
+                    forceHoverState={false}
+                />
+            </div>
 
 
 
-        </>
+
+
+
+        </div>
     )
 }
 
