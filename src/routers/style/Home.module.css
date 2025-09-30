@@ -31,13 +31,14 @@
 }
 
 .containerProc {
-    border: solid 1px white;
+    border: 1px purple solid;
+    border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     padding: 10px;
-    margin: 5px;
+    margin: 10px;
 }
 
 .containerDescription {
@@ -53,20 +54,24 @@
     width: 100%;
     object-fit: cover;
     border-radius: 5px;
-    box-shadow: 0 3px 5px 0px white;
+    box-shadow: 0 4px 10px #4B004F;
 }
 
 .image {
-    width: 500px;
-    height: 550px;
+    width: 300px;
+    height: 350px;
 }
 
 .description {
+    background-color: black;
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5px;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 
@@ -115,8 +120,54 @@
 
 .orbContainer{
     width: 100%;
-    height: 1000px;
+    height: 600px;
+    position: relative;
 }
+
+.publContainer{
+  border: 1px solid white;  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(179, 179, 179, 0.2);
+  height: 500px;
+  width: 500px;
+}
+
+
+
+.publContainer h2{
+    font-size: 2.5rem;
+}
+
+.publDescription{
+    color: white;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 17px;
+}
+
+.linea {
+  width: 50%;           
+  height: 3px;          
+  background-color: white;
+  margin: 20px auto;    
+  border-radius: 2px;   
+}
+
+.publContainer p{
+    font-size: 1.2rem;
+}
+
+.timeHome{
+    padding: 10px;
+}
+
 
 @media (max-width:760px) {
 
@@ -128,8 +179,8 @@
     }
 
     .image {
-        width: 350px;
-        height: 350px;
+        width: 250px;
+        height: 250px;
     }
 
     .btn1{
@@ -148,6 +199,19 @@
     .description p {
         font-size: 1.5rem;
         text-align: center;
+    }
+
+    .publContainer{
+        width: 250px;
+        height: 400px;
+    }
+
+    .publContainer h1{
+        font-size: 1.5rem;
+    }
+
+    .publContainer p{
+        font-size: 1.2rem;
     }
 
 

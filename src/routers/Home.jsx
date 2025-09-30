@@ -7,7 +7,6 @@ import legs from "../assets/hermosas-piernas.jpg"
 import manic from "../assets/cosmetic-1471346_1280.jpg"
 import { Link } from "react-router-dom"
 import Orb from "../components/Orb"
-import { col } from "motion/react-client"
 
 
 function Home() {
@@ -104,13 +103,29 @@ function Home() {
                 <Orb
                     hoverIntensity={0}
                     rotateOnHover={true}
-                    hue={280}
+                    hue={282}
                     forceHoverState={false}
+
                 />
+
+                <div className={style.publContainer}>
+                    <div className={style.publDescription}>
+                        <div className={style.linea}></div>
+                        <h2>Visitanos</h2>
+                        <div className={style.timeHome}>
+                            <h1>Horario de trabajo</h1>
+                            <p>Serrano 479,Cdad autonoma de Buenos aires</p>
+                            <p>Lunes-Viernes: 11a.m-8p.m \ Sabado: 10a.m-18p.m</p>
+                        </div>
+                        <div className={style.publSocial}>
+                            <h1>Siguenos en nuestras redes</h1>
+                        </div>
+                        <div>
+                            <Link>Ver ubicacion</Link>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-
-
 
 
 

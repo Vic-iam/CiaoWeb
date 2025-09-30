@@ -20,7 +20,7 @@ function Navbar() {
                         <div className={`${style.containerLink} ${isOpen && style.open}`}>
 
                             <li><Link to="/" onClick={handleLinkClick}>Inicio</Link></li>
-                            <li><Link to="/procedimientos" onClick={handleLinkClick}>Procedimientos</Link></li>
+                            <li><Link to="/procedimientos" onClick={handleLinkClick}>Servicios</Link></li>
                             <li><Link to="/nosotros" onClick={handleLinkClick}>Nosotros</Link></li>
                             <li><Link to="/contactos" onClick={handleLinkClick}>Contactos</Link></li>
 
