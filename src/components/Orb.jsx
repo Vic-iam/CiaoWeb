@@ -5,7 +5,7 @@ import style from './style/Orb.module.css';
 export default function Orb({ hue = 0, hoverIntensity = 0.2, rotateOnHover = true, forceHoverState = false }) {
   const ctnDom = useRef(null);
 
-  const vert = /* glsl */ `
+  const vert = /* glsl*/ `
     precision highp float;
     attribute vec2 position;
     attribute vec2 uv;
