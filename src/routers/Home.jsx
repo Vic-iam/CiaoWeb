@@ -13,7 +13,7 @@ import Manic from "../assets/cosmetic-1471346_1280.jpg"
 function Home() {
     const handleAnimationComplete = () => { }
 
-    const servicios = [
+    const serviciosHome = [
         {
             img: Cejas,
             titulo: "Cejas",
@@ -63,7 +63,7 @@ function Home() {
             {/* === Sección de servicios === */}
             <section className={style.containerProc}>
                 <div className={style.containerDescription}>
-                    {servicios.map((s, i) => (
+                    {serviciosHome.map((s, i) => (
                         <div key={i} className={style.description}>
                             <div className={style.image}>
                                 <img src={s.img} alt={s.titulo} />
