@@ -6,7 +6,9 @@ function Contactos() {
         <>
 
 
-            <div>Contactos</div>
+            <div>
+                Contactos
+            </div>
         </>
 
 
