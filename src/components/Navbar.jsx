@@ -7,7 +7,8 @@ function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
 
     const handleLinkClick = () => {
-        setIsOpen(false)  
+        setIsOpen(false);
+        window.scrollTo({ top: 0, behavior: "smooth" });  
     }
 
         return (

@@ -1,72 +1,117 @@
-import React, { useState } from 'react'
-import style from "./style/Procedimientos.module.css"
-import { FaChevronRight } from "react-icons/fa"
-import DarkVeil from '../components/Darkveil'
-import servicios from "../data/servicios.json"
+import { useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import style from "./style/Procedimientos.module.css";
+import { FaChevronRight, FaWhatsapp } from "react-icons/fa";
+import servicios from "../data/servicios.json";
+import menuItems from "../data/menuItems.json"
 
 function Procedimientos() {
+    const [openIds, setOpenIds] = useState([]);
+    const [seleccionados, setSeleccionados] = useState([]);
+    const [alerta, setAlerta] = useState([]);
 
-    const [openId, setOpenId] = useState(null)
+
 
     const toggleServicio = (id) => {
-        setOpenId(openId === id ? null : id)
-    }
+        if (openIds.includes(id)) {
+            setOpenIds(openIds.filter(openId => openId !== id));
+        } else {
+            setOpenIds([...openIds, id]);
+        }
+    };
+
+    const toggleSeleccion = (opcion) => {
+        if (seleccionados.includes(opcion)) {
+            setSeleccionados(seleccionados.filter(item => item !== opcion));
+        } else {
+            setSeleccionados([...seleccionados, opcion]);
+        }
+    };
+
+    const mostrarAlerta = (mensaje) => {
+        setAlerta(mensaje);
+        setTimeout(() => setAlerta(null), 3000);
+    };
+
+    const enviarWhatsApp = () => {
+        if (seleccionados.length === 0) return mostrarAlerta("Selecciona al menos un servicio");
+        const numero = "1133973900";
+        const mensaje = encodeURIComponent(`Hola, quiero pedir turno para: ${seleccionados.join(", ")}`);
+        window.open(`https://wa.me/${numero}?text=${mensaje}`, "_blank");
+    };
+
+    const menuRef = useRef(null);
+
+    const scroll = (direction) => {
+        if (menuRef.current) {
+            menuRef.current.scrollBy({
+                left: direction === "left" ? -200 : 200,
+                behavior: "smooth"
+            });
+        }
+    };
 
     return (
         <div className={style.serviciosBody}>
-
             <div className={style.serviciosContainer}>
-
                 <div className={style.titleContainer}>
                     <h2>Nuestros servicios</h2>
                 </div>
 
+                <div className={style.menuWrapper}>
+                    <button className={style.scrollBtn} onClick={() => scroll("left")}>
+                        ◀
+                    </button>
+
+                    <div className={style.menuItemContainer} ref={menuRef}>
+                        {menuItems.map((item, index) => (
+                            <Link key={index} to={`/${item.toLowerCase()}`} className={style.menuLink}>
+                                {item}
+                            </Link>
+                        ))}
+                    </div>
+
+                    <button className={style.scrollBtn} onClick={() => scroll("right")}>
+                        ▶
+                    </button>
+                </div>
+
+
                 {servicios.map(servicio => (
-
                     <div key={servicio.id} className={style.styleServis}>
-
-                        <div className={style.servicioHeader} onClick={() => toggleServicio(servicio.id)}>
-
-                            <h3 className={style.styleNombre}> {servicio.nombre}</h3>
-
-                            <FaChevronRight className={`${style.iconArrow} ${openId === servicio.id ? style.open : ""}`} />
-
+                        <div
+                            className={style.servicioHeader}
+                            onClick={() => toggleServicio(servicio.id)}
+                        >
+                            <h3 className={style.styleNombre}>{servicio.nombre}</h3>
+                            <FaChevronRight className={`${style.iconArrow} ${openIds.includes(servicio.id) ? style.open : ""}`} />
                         </div>
 
-                        {openId === servicio.id && (
-
-                            <div className={`${style.content} ${openId === servicio.id ? style.openContent : ""}`}> 
-
-                                <ul>
-
-                                    {servicio.opciones.map((otp, index) => (
-
-                                        <div className={style.styleOptions}>
-
-                                            <li key={index}>
-
-                                                {otp}
-
-                                                <button onClick={() => pedirTurno(otp)} className={style.btn}>Pedir turno</button>
-
-                                            </li>
-
-                                        </div>
-                                        
-                                    ))}
-
-                                </ul>
-
-                            </div>
-
-                        )}
+                        <div className={`${style.content} ${openIds.includes(servicio.id) ? style.openContent : ""}`}>
+                            <ul>
+                                {servicio.opciones.map((otp, index) => (
+                                    <li
+                                        key={index}
+                                        className={`${style.styleOptions} ${seleccionados.includes(otp) ? style.selectedOption : ""}`}
+                                        onClick={() => toggleSeleccion(otp)}
+                                    >
+                                        <span>{otp}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
                 ))}
+
+                <button onClick={enviarWhatsApp} className={style.btnWhatsAppFloat}>
+                    <FaWhatsapp />
+                </button>
+
+                {alerta && <div className={style.toast}>{alerta}</div>}
+
             </div>
-
-
         </div>
-    )
+    );
 }
 
-export default Procedimientos
+export default Procedimientos;

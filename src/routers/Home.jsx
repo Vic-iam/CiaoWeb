@@ -75,7 +75,7 @@ function Home() {
                 </div>
 
                 <div>
-                    <Link to="/procedimientos" className={`${style.btnBase} ${style.btnPrimary}`}>
+                    <Link to="/procedimientos" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className={`${style.btnBase} ${style.btnPrimary}`}>
                         Ver servicios
                     </Link>
                 </div>
