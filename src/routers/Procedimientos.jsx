@@ -28,6 +28,7 @@ function Procedimientos() {
                         <div className={style.servicioHeader} onClick={() => toggleServicio(servicio.id)}>
 
                             <h3 className={style.styleNombre}> {servicio.nombre}</h3>
+
                             <FaChevronRight className={`${style.iconArrow} ${openId === servicio.id ? style.open : ""}`} />
 
                         </div>
@@ -47,10 +48,13 @@ function Procedimientos() {
                                                 {otp}
 
                                                 <button onClick={() => pedirTurno(otp)} className={style.btn}>Pedir turno</button>
+
                                             </li>
+
                                         </div>
+                                        
                                     ))}
-                                    
+
                                 </ul>
 
                             </div>

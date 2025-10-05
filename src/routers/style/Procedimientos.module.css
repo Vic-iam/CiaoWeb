@@ -13,6 +13,8 @@
     background-color: black;
     margin: 10px;
     border-radius: 10px;
+    flex-wrap: wrap;
+    flex: 1 1 100px;
 }
 
 .titleContainer{
@@ -46,7 +48,6 @@
     border-radius: 10px;
 }
 
-/* Cabecera del servicio (clickable) */
 .servicioHeader {
   display: flex;
   justify-content: space-between;
@@ -55,7 +56,6 @@
   padding: 10px 0;
 }
 
-/* Contenedor oculto por defecto */
 .content {
   max-height: 0;
   opacity: 0;
@@ -63,17 +63,38 @@
   transition: max-height 0.5s ease, opacity 0.5s ease;
 }
 
-/* Cuando está abierto */
 .openContent {
-  max-height: 500px; /* dale un valor suficientemente grande para el contenido */
+  max-height: 500px;
   opacity: 1;
 }
 
-/* Flecha animada */
 .iconArrow {
   transition: transform 0.3s ease;
 }
 
 .open {
   transform: rotate(90deg);
+}
+
+@media (max-width: 760px) {
+
+    .titleContainer{
+        padding-top: 70px;
+        font-size: 2rem;
+    }
+
+    .styleNombre{
+        font-size: 1.5rem;
+    }
+
+    .styleOptions li{
+        font-size: 0.9rem;
+    }
+
+    .btn{
+        font-size: 0.9rem;
+    }
+
+
+    
 }
