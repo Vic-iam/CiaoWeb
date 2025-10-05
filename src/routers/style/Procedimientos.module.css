@@ -29,11 +29,12 @@
   gap: 5px;
   padding: 6px;
   background-color: #3C0366;
+  border-radius: 10px;
 }
 
 .scrollBtn {
-  background-color: #000000;
-  color: white;
+  background-color: white;
+  color: black;
   border: none;
   padding: 10px 12px;
   cursor: pointer;
@@ -65,6 +66,7 @@
   border-radius: 8px;
   white-space: nowrap;
   transition: background 0.2s;
+  cursor: pointer;
 }
 
 .menuLink:hover {

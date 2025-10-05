@@ -1,9 +1,7 @@
 import { useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import style from "./style/Procedimientos.module.css";
 import { FaChevronRight, FaWhatsapp } from "react-icons/fa";
 import servicios from "../data/servicios.json";
-import menuItems from "../data/menuItems.json"
 
 function Procedimientos() {
     const [openIds, setOpenIds] = useState([]);
@@ -17,6 +15,13 @@ function Procedimientos() {
             setOpenIds(openIds.filter(openId => openId !== id));
         } else {
             setOpenIds([...openIds, id]);
+        }
+    };
+
+    const irAlServicio = (id) => {
+        const elemento = document.getElementById(`servicio-${id}`);
+        if (elemento) {
+            elemento.scrollIntoView({ behavior: "smooth", block: "start" });
         }
     };
 
@@ -64,10 +69,10 @@ function Procedimientos() {
                     </button>
 
                     <div className={style.menuItemContainer} ref={menuRef}>
-                        {menuItems.map((item, index) => (
-                            <Link key={index} to={`/${item.toLowerCase()}`} className={style.menuLink}>
-                                {item}
-                            </Link>
+                        {servicios.map((item) => (
+                            <span key={item.id} className={style.menuLink} onClick={() => irAlServicio(item.id)}>
+                                {item.nombre}
+                            </span>
                         ))}
                     </div>
 
@@ -78,7 +83,7 @@ function Procedimientos() {
 
 
                 {servicios.map(servicio => (
-                    <div key={servicio.id} className={style.styleServis}>
+                    <div key={servicio.id} className={style.styleServis} id={`servicio-${servicio.id}`}>
                         <div
                             className={style.servicioHeader}
                             onClick={() => toggleServicio(servicio.id)}
