@@ -8,8 +8,6 @@ function Procedimientos() {
     const [seleccionados, setSeleccionados] = useState([]);
     const [alerta, setAlerta] = useState([]);
 
-
-
     const toggleServicio = (id) => {
         if (openIds.includes(id)) {
             setOpenIds(openIds.filter(openId => openId !== id));
