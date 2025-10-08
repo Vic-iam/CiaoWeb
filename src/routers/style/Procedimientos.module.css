@@ -1,135 +1,127 @@
-.serviciosBody{ 
-  background: #ffffff;
+/* =========================
+   VARIABLES DE COLOR (THEME)
+========================= */
+
+:root {
+  --color-bg: #ffffff;
+  --color-text: #222222;
+  --color-primary: #6A1B9A;
+  --color-secondary: #6A1B9A;
+  --color-accent: #8E51FF;
+  --color-hover: #f2f2f2;
+  --color-toast-bg: #333333;
+  --color-btn-whatsapp: #25D366;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 🌙 Modo oscuro automático */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0f0f10;
+    --color-text: #e6e6e6;
+    --color-primary: #8E51FF;
+    --color-secondary: #6A1B9A;
+    --color-hover: rgba(255, 255, 255, 0.1);
+    --color-toast-bg: #222222;
+  }
+}
+
+/* =========================
+   ESTRUCTURA GENERAL
+========================= */
+
+.serviciosBody {
+  background: var(--color-bg);
   font-family: 'Poppins', sans-serif;
-  color: rgb(219, 218, 218);
+  color: var(--color-text);
+  transition: background 0.3s, color 0.3s;
 }
 
-.styleServis{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px;
-    background-color: black;
-    margin: 10px;
-    border-radius: 10px;
+
+/* =========================
+   TÍTULO PRINCIPAL
+========================= */
+
+.titleContainer {
+  text-align: center;
+  padding: 10px;
+  font-size: 3rem;
+  color: var(--color-text);
+  transition: color 0.3s;
 }
 
-.titleContainer{
-    text-align: center;
-    padding: 10px;
-    font-size: 2.5rem;
-    color: black;
-}
+/* =========================
+   MENÚ SUPERIOR DE SERVICIOS
+========================= */
 
 .menuWrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   display: flex;
   align-items: center;
-  position: sticky; 
-  top: 0;
-  z-index: 1; 
   gap: 5px;
   padding: 6px;
-  background-color: #3C0366;
   height: 100px;
-  border-radius: 0 0 10px 10px; 
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  background-color: var(--color-secondary);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .scrollBtn {
-  background-color: white;
-  color: black;
+  background-color: var(--color-bg);
+  color: var(--color-text);
   border: none;
-  padding: 10px 12px;
-  cursor: pointer;
   border-radius: 50%;
-  font-size: 16px;
-  transition: transform 0.2s;
+  padding: 8px 10px;
+  font-size: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
 }
 
 .scrollBtn:hover {
   transform: scale(1.1);
+  background-color: var(--color-hover);
 }
 
-.menuItemContainer{
+.menuItemContainer {
   display: flex;
   white-space: nowrap;
-  padding: 10px 0;
-  gap: 10px;
   overflow-x: auto;
+  padding: 10px 0;
 }
 
 .menuItemContainer::-webkit-scrollbar {
-   display: none;
+  display: none;
 }
 
 .menuLink {
+  color: #fff;
   text-decoration: none;
-  color: white;
   padding: 8px 15px;
   border-radius: 8px;
   white-space: nowrap;
-  transition: background 0.2s;
   cursor: pointer;
+  transition: background 0.2s;
 }
 
 .menuLink:hover {
-  background-color: black;
+  background-color: var(--color-primary);
 }
 
-.styleNombre{
-    font-size: 2.4rem;
-}
+/* =========================
+   CONTENIDO DE SERVICIOS
+========================= */
 
-.styleOptions {
+.styleServis {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 10px;
-  padding: 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-  user-select: none;
-}
-
-.styleOptions:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.selectedOption {
-  background-color: #8E51FF; 
-  color: white;
-}
-
-.btnWhatsAppFloat {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: 15px 20px;
-  font-size: 2.5rem;
-  background-color: #25D366; 
-  color: white;
-  border: none;
-  border-radius: 50px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  z-index: 1;
-  transition: transform 0.2s;
-}
-
-.btnWhatsAppFloat:hover {
-  transform: scale(1.05);
-}
-
-.btn{
-    border: none;
-    background-color: white;
-    color: black;
-    width: 100px;
-    height: 30px;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 10px;
+  margin: 10px;
+  padding: 15px;
+  background-color: var(--color-primary);
+  border-radius: 10px;
+  color: #fff;
+  transition: background 0.3s;
 }
 
 .servicioHeader {
@@ -140,16 +132,9 @@
   padding: 10px 0;
 }
 
-.content {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease, opacity 0.5s ease;
-}
-
-.openContent {
-  max-height: 500px;
-  opacity: 1;
+.styleNombre {
+  font-size: 2.4rem;
+  color: #fff;
 }
 
 .iconArrow {
@@ -160,54 +145,153 @@
   transform: rotate(90deg);
 }
 
+/* =========================
+   CONTENIDO EXPANDIBLE
+========================= */
+
+.content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.content h2 {
+  padding: 10px;
+  color: #fff;
+}
+
+.openContent {
+  max-height: 500px;
+  opacity: 1;
+}
+
+/* =========================
+   OPCIONES DE SERVICIO
+========================= */
+
+.styleOptions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.styleOptions:hover {
+  background-color: var(--color-hover);
+}
+
+.selectedOption {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+.btn {
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--color-hover);
+  transform: scale(1.05);
+}
+
+.btnWhatsAppFloat {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  font-size: 2.5rem;
+  border: none;
+  border-radius: 50px;
+  background-color: var(--color-btn-whatsapp);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  z-index: 1;
+  transition: transform 0.2s;
+}
+
+.btnWhatsAppFloat:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   TOAST / ALERTAS
+========================= */
 
 .toast {
   position: fixed;
   bottom: 80px;
   right: 20px;
-  background-color: #333;
-  color: white;
+  background-color: var(--color-toast-bg);
+  color: #fff;
   padding: 12px 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  z-index: 1000;
   font-weight: bold;
+  box-shadow: var(--shadow);
+  z-index: 1;
   animation: slideIn 0.3s, fadeOut 0.3s 2.7s forwards;
 }
 
 @keyframes slideIn {
-  from { transform: translateX(100%); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @keyframes fadeOut {
-  to { opacity: 0; }
+  to {
+    opacity: 0;
+  }
 }
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
 
 @media (max-width: 760px) {
 
-    .titleContainer{
-        padding-top: 55px;
-        font-size: 2rem;
-    }
+  .titleContainer {
+    padding-top: 55px;
+    font-size: 2rem;
+  }
 
-    .styleNombre{
-        font-size: 1.5rem;
-    }
+  .styleNombre {
+    font-size: 1.5rem;
+  }
 
-    .styleOptions{
-        font-size: 0.9rem;
-    }
+  .styleOptions {
+    font-size: 0.9rem;
+  }
 
-    .btn{
-        font-size: 0.9rem;
-    }
+  .btn {
+    font-size: 0.9rem;
+  }
 
-
-    .menuWrapper{
-      top: 11%;
-    }
-
-
-    
+  .menuWrapper {
+    top: 11%;
+  }
 }

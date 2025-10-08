@@ -69,7 +69,7 @@ function Home() {
                                 <img src={s.img} alt={s.titulo} />
                             </div>
                             <h2>{s.titulo}</h2>
-                            <p>{s.desc}</p>
+                            <p>"{s.desc}"</p>
                         </div>
                     ))}
                 </div>

@@ -1,39 +1,47 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useMemo } from 'react';
 import style from "./style/Procedimientos.module.css";
 import { FaChevronRight, FaWhatsapp } from "react-icons/fa";
 import servicios from "../data/servicios.json";
-import SplitText from "../components/SplitText"
+import SplitText from "../components/SplitText";
 
 function Procedimientos() {
-
     const [openIds, setOpenIds] = useState([]);
     const [seleccionados, setSeleccionados] = useState([]);
-    const [alerta, setAlerta] = useState([]);
+    const [alerta, setAlerta] = useState(null);
 
+    const menuRef = useRef(null);
+
+    // 🌀 Función para abrir/cerrar servicios manualmente (acordeón)
     const toggleServicio = (id) => {
         if (openIds.includes(id)) {
-            setOpenIds(openIds.filter(openId => openId !== id));
+            setOpenIds([]);
         } else {
-            setOpenIds([...openIds, id]);
+            setOpenIds([id]); // solo un servicio abierto a la vez
         }
     };
 
+    // 🎯 Al seleccionar un servicio desde el menú superior
     const irAlServicio = (id) => {
         const elemento = document.getElementById(`servicio-${id}`);
 
         if (elemento) {
+            // Abre o cierra el acordeón del servicio seleccionado
             if (openIds.includes(id)) {
                 setOpenIds([]);
             } else {
                 setOpenIds([id]);
             }
 
+            // Detecta si es móvil
             const esMovil = window.innerWidth <= 768;
 
+            // Altura del menú sticky
             const menuAltura = menuRef.current?.offsetHeight || 0;
 
+            // Compensación diferente según dispositivo
             const offsetExtra = esMovil ? 160 : 80;
 
+            // Posición de destino
             const posicion = elemento.getBoundingClientRect().top + window.scrollY - menuAltura - offsetExtra;
 
             window.scrollTo({
@@ -43,6 +51,7 @@ function Procedimientos() {
         }
     };
 
+    // 🟢 Selección de servicios individuales
     const toggleSeleccion = (opcion) => {
         if (seleccionados.includes(opcion)) {
             setSeleccionados(seleccionados.filter(item => item !== opcion));
@@ -51,11 +60,13 @@ function Procedimientos() {
         }
     };
 
+    // ⚠️ Alerta visual temporal
     const mostrarAlerta = (mensaje) => {
         setAlerta(mensaje);
         setTimeout(() => setAlerta(null), 3000);
     };
 
+    // 💬 Enviar WhatsApp con los servicios seleccionados
     const enviarWhatsApp = () => {
         if (seleccionados.length === 0) return mostrarAlerta("Selecciona al menos un servicio");
         const numero = "1133973900";
@@ -63,8 +74,7 @@ function Procedimientos() {
         window.open(`https://wa.me/${numero}?text=${mensaje}`, "_blank");
     };
 
-    const menuRef = useRef(null);
-
+    // ↔️ Scroll lateral del menú
     const scroll = (direction) => {
         if (menuRef.current) {
             menuRef.current.scrollBy({
@@ -74,53 +84,59 @@ function Procedimientos() {
         }
     };
 
+    // 🧩 Animación del título
     const handleAnimationComplete = () => {
-        console.log('All letters have animated!');
+        console.log('Animación del título completa');
     };
 
-    return (
+    const tituloAnimado = useMemo(() => (
+        <SplitText
+            text="Nuestros Servicios"
+            className={style.titleContainer}
+            delay={100}
+            duration={0.6}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+            textAlign="center"
+            onLetterAnimationComplete={handleAnimationComplete}
+        />
+    ), []);
 
+    return (
         <div className={style.serviciosBody}>
 
             <div className={style.serviciosContainer}>
 
-
+                {/* 🟣 Menú Sticky */}
                 <div className={style.menuWrapper}>
-
-                    <button className={style.scrollBtn} onClick={() => scroll("left")}>
-                        ◀
-                    </button>
+                    <button className={style.scrollBtn} onClick={() => scroll("left")}>◀</button>
 
                     <div className={style.menuItemContainer} ref={menuRef}>
                         {servicios.map((item) => (
-                            <span key={item.id} className={style.menuLink} onClick={() => irAlServicio(item.id)}>
+                            <span
+                                key={item.id}
+                                className={style.menuLink}
+                                onClick={() => irAlServicio(item.id)}
+                            >
                                 {item.nombre}
                             </span>
                         ))}
                     </div>
 
-                    <button className={style.scrollBtn} onClick={() => scroll("right")}>
-                        ▶
-                    </button>
+                    <button className={style.scrollBtn} onClick={() => scroll("right")}>▶</button>
                 </div>
 
+
+                {/* 🧠 Título animado (no se reinicia) */}
                 <div className={style.titleContainer}>
-                    <SplitText text="Nuestros Servicios"
-                        className={style.titleContainer}
-                        delay={100}
-                        duration={0.6}
-                        ease="power3.out"
-                        splitType="chars"
-                        from={{ opacity: 0, y: 40 }}
-                        to={{ opacity: 1, y: 0 }}
-                        threshold={0.1}
-                        rootMargin="-100px"
-                        textAlign="center"
-                        onLetterAnimationComplete={handleAnimationComplete} />
+                    {tituloAnimado}
                 </div>
 
-
-
+                {/* 🧾 Lista de servicios */}
                 {servicios.map(servicio => (
                     <div key={servicio.id} className={style.styleServis} id={`servicio-${servicio.id}`}>
                         <div
@@ -133,6 +149,7 @@ function Procedimientos() {
 
                         <div className={`${style.content} ${openIds.includes(servicio.id) ? style.openContent : ""}`}>
                             <ul>
+                                <h2 className={style.contentTitle}>Elige un servicio:</h2>
                                 {servicio.opciones.map((otp, index) => (
                                     <li
                                         key={index}
@@ -147,12 +164,13 @@ function Procedimientos() {
                     </div>
                 ))}
 
+                {/* 📱 Botón flotante de WhatsApp */}
                 <button onClick={enviarWhatsApp} className={style.btnWhatsAppFloat}>
                     <FaWhatsapp />
                 </button>
 
+                {/* ⚠️ Toast de alerta */}
                 {alerta && <div className={style.toast}>{alerta}</div>}
-
             </div>
         </div>
     );
