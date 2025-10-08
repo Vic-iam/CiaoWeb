@@ -4,6 +4,7 @@ import { FaChevronRight, FaWhatsapp } from "react-icons/fa";
 import servicios from "../data/servicios.json";
 
 function Procedimientos() {
+    
     const [openIds, setOpenIds] = useState([]);
     const [seleccionados, setSeleccionados] = useState([]);
     const [alerta, setAlerta] = useState([]);
@@ -19,7 +20,15 @@ function Procedimientos() {
     const irAlServicio = (id) => {
         const elemento = document.getElementById(`servicio-${id}`);
         if (elemento) {
-            elemento.scrollIntoView({ behavior: "smooth", block: "start" });
+            if (!openIds.includes(id)) {
+                setOpenIds([id]);
+            }
+            const menuAltura = menuRef.current?.offsetHeight || 0;
+            const posicion = elemento.getBoundingClientRect().top + window.scrollY - menuAltura - 80;
+            window.scrollTo({
+                top: posicion,
+                behavior: "smooth"
+            });
         }
     };
 
@@ -55,13 +64,17 @@ function Procedimientos() {
     };
 
     return (
+
         <div className={style.serviciosBody}>
+
             <div className={style.serviciosContainer}>
+
                 <div className={style.titleContainer}>
                     <h2>Nuestros servicios</h2>
                 </div>
 
                 <div className={style.menuWrapper}>
+
                     <button className={style.scrollBtn} onClick={() => scroll("left")}>
                         ◀
                     </button>
