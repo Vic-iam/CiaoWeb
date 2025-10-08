@@ -114,7 +114,7 @@ function Home() {
                                 </a>
                             </div>
                         </div>
-                        <p>Amarse a uno mismo es el comienzo de un romance para toda la vida</p>
+                        <p style={{color: "#E1BEE7"}}>"Amarse a uno mismo es el comienzo de un romance para toda la vida"</p>
                     </div>
                 </section>
             </div>

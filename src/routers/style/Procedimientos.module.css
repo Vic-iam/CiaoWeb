@@ -26,7 +26,7 @@
   align-items: center;
   position: sticky; 
   top: 0;
-  z-index: 100; 
+  z-index: 1; 
   gap: 5px;
   padding: 6px;
   background-color: #3C0366;
@@ -113,7 +113,7 @@
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  z-index: 999;
+  z-index: 1;
   transition: transform 0.2s;
 }
 
@@ -187,7 +187,7 @@
 @media (max-width: 760px) {
 
     .titleContainer{
-        padding-top: 70px;
+        padding-top: 55px;
         font-size: 2rem;
     }
 
@@ -201,6 +201,11 @@
 
     .btn{
         font-size: 0.9rem;
+    }
+
+
+    .menuWrapper{
+      top: 11%;
     }
 
 

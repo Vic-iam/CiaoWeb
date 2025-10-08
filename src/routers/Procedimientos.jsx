@@ -2,9 +2,10 @@ import { useState, useRef } from 'react';
 import style from "./style/Procedimientos.module.css";
 import { FaChevronRight, FaWhatsapp } from "react-icons/fa";
 import servicios from "../data/servicios.json";
+import SplitText from "../components/SplitText"
 
 function Procedimientos() {
-    
+
     const [openIds, setOpenIds] = useState([]);
     const [seleccionados, setSeleccionados] = useState([]);
     const [alerta, setAlerta] = useState([]);
@@ -19,12 +20,22 @@ function Procedimientos() {
 
     const irAlServicio = (id) => {
         const elemento = document.getElementById(`servicio-${id}`);
+
         if (elemento) {
-            if (!openIds.includes(id)) {
+            if (openIds.includes(id)) {
+                setOpenIds([]);
+            } else {
                 setOpenIds([id]);
             }
+
+            const esMovil = window.innerWidth <= 768;
+
             const menuAltura = menuRef.current?.offsetHeight || 0;
-            const posicion = elemento.getBoundingClientRect().top + window.scrollY - menuAltura - 80;
+
+            const offsetExtra = esMovil ? 160 : 80;
+
+            const posicion = elemento.getBoundingClientRect().top + window.scrollY - menuAltura - offsetExtra;
+
             window.scrollTo({
                 top: posicion,
                 behavior: "smooth"
@@ -63,15 +74,16 @@ function Procedimientos() {
         }
     };
 
+    const handleAnimationComplete = () => {
+        console.log('All letters have animated!');
+    };
+
     return (
 
         <div className={style.serviciosBody}>
 
             <div className={style.serviciosContainer}>
 
-                <div className={style.titleContainer}>
-                    <h2>Nuestros servicios</h2>
-                </div>
 
                 <div className={style.menuWrapper}>
 
@@ -91,6 +103,22 @@ function Procedimientos() {
                         ▶
                     </button>
                 </div>
+
+                <div className={style.titleContainer}>
+                    <SplitText text="Nuestros Servicios"
+                        className={style.titleContainer}
+                        delay={100}
+                        duration={0.6}
+                        ease="power3.out"
+                        splitType="chars"
+                        from={{ opacity: 0, y: 40 }}
+                        to={{ opacity: 1, y: 0 }}
+                        threshold={0.1}
+                        rootMargin="-100px"
+                        textAlign="center"
+                        onLetterAnimationComplete={handleAnimationComplete} />
+                </div>
+
 
 
                 {servicios.map(servicio => (

@@ -40,7 +40,6 @@
 
 /* === Servicios === */
 .containerProc {
-  border: 1px white solid;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
