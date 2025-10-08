@@ -17,7 +17,7 @@
 /* 🌙 Modo oscuro automático */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #0f0f10;
+    --color-bg: black;
     --color-text: #e6e6e6;
     --color-primary: #8E51FF;
     --color-secondary: #6A1B9A;
@@ -118,7 +118,7 @@
   gap: 10px;
   margin: 10px;
   padding: 15px;
-  background-color: var(--color-primary);
+  background-color: var(--color-secondary);
   border-radius: 10px;
   color: #fff;
   transition: background 0.3s;

@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "nombre": "Bellezas de pie",
+        "nombre": "Bellezas de pies",
         "opciones": [
             "Bellezas de pies esmaltado común",
             "Bellezas de pies esmaltado semipermanente",
@@ -27,14 +27,14 @@
     },
     {
         "id": 3,
-        "nombre": "Combo depilacion mujer",
+        "nombre": "Combo de depilaciones de mujeres",
         "opciones": [
             "Cejas + bozos"
         ]
     },
     {
         "id": 4,
-        "nombre": "Depilacion cera",
+        "nombre": "Depilaciones con cera",
         "opciones": [
             "Axilas(cera sistema español)",
             "Axilas + pierna entera + cavado completo + tira de cola",
@@ -71,7 +71,7 @@
     },
     {
         "id": 5,
-        "nombre": "Depilacion definitiva",
+        "nombre": "Depilaciones definitivas",
         "opciones": [
             "Bozo + menton",
             "Bozo + menton + pera",
@@ -92,7 +92,7 @@
     },
     {
         "id": 7,
-        "nombre": "Extension de pestañas",
+        "nombre": "Extensiones de pestañas",
         "opciones": [
             "Efecto rimel",
             "Extensiones clasicas",
@@ -102,7 +102,7 @@
     },
     {
         "id": 8,
-        "nombre": "Kapping",
+        "nombre": "Kappings",
         "opciones": [
             "Kapping base soak off + esmalte semipermanente",
             "Kapping gel de construccion + esmalte semipermanente",
@@ -111,7 +111,7 @@
     },
     {
         "id": 9,
-        "nombre": "Lifting de pestañas",
+        "nombre": "Liftings de pestañas",
         "opciones": [
             "Lifting basico",
             "Lifting de pestañas + botox + queratina + tinte",
@@ -120,7 +120,7 @@
     },
     {
         "id": 10,
-        "nombre": "Limpieza de cutis",
+        "nombre": "Limpiezas de cutis",
         "opciones": [
             "ratacion de labios",
             "Higiene facial + exfoliacion + descongestion alta frecuencia + hidratacion de la piel",
@@ -129,21 +129,21 @@
     },
     {
         "id": 11,
-        "nombre": "Limpieza de espalda",
+        "nombre": "Limpiezas de espalda",
         "opciones": [
             "Higiene de espalda"
         ]
     },
     {
         "id": 12,
-        "nombre": "Limpieza facial",
+        "nombre": "Limpiezas faciales",
         "opciones": [
             "Peeling facial"
         ]
     },
     {
         "id": 13,
-        "nombre": "Manicura",
+        "nombre": "Manicuras",
         "opciones": [
             "Cambio de esmalte semipermanete french en manos",
             "Manicura esmaltado semipermanente frech",
@@ -156,21 +156,21 @@
     },
     {
         "id": 14,
-        "nombre": "Masaje corporal",
+        "nombre": "Masajes corporales",
         "opciones": [
             "Masaje corporal"
         ]
     },
     {
         "id": 15,
-        "nombre": "Masajes y aparatologia",
+        "nombre": "Masajes y aparatologias",
         "opciones": [
             "Masaje capilar con ultrason"
         ]
     },
     {
         "id": 16,
-        "nombre": "Pedicura",
+        "nombre": "Pedicuras",
         "opciones": [
             "Pedicuria esmaltado semipermanente french",
             "Pedicuria esmalte comun",
@@ -184,7 +184,7 @@
     },
     {
         "id": 17,
-        "nombre": "Reflexologia",
+        "nombre": "Reflexologias",
         "opciones": [
             "Reflexologia"
         ]
@@ -209,21 +209,21 @@
     },
     {
         "id": 20,
-        "nombre": "Tratamiento antiage",
+        "nombre": "Tratamientos antiage",
         "opciones": [
             "Tratamiento de blaqueamiento de parpados e hidratacion de ojeras"
         ]
     },
     {
         "id": 21,
-        "nombre": "Tratamiento facial avanzado",
+        "nombre": "Tratamientos faciales avanzado",
         "opciones": [
             "Tratamiento facial para acne o rosacea + drenaje linfatico"
         ]
     },
     {
         "id": 22,
-        "nombre": "Tratamiento corporales",
+        "nombre": "Tratamientos corporales",
         "opciones": [
             "Pulido corporal + crema u oleo hidratante",
             "pulido corporal + emplasto de algas"

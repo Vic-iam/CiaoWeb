@@ -16,39 +16,37 @@ function Procedimientos() {
         if (openIds.includes(id)) {
             setOpenIds([]);
         } else {
-            setOpenIds([id]); // solo un servicio abierto a la vez
+            setOpenIds([id]);
         }
     };
 
     // 🎯 Al seleccionar un servicio desde el menú superior
     const irAlServicio = (id) => {
         const elemento = document.getElementById(`servicio-${id}`);
+        if (!elemento) return;
 
-        if (elemento) {
-            // Abre o cierra el acordeón del servicio seleccionado
-            if (openIds.includes(id)) {
-                setOpenIds([]);
-            } else {
-                setOpenIds([id]);
-            }
-
-            // Detecta si es móvil
-            const esMovil = window.innerWidth <= 768;
-
-            // Altura del menú sticky
-            const menuAltura = menuRef.current?.offsetHeight || 0;
-
-            // Compensación diferente según dispositivo
-            const offsetExtra = esMovil ? 160 : 80;
-
-            // Posición de destino
-            const posicion = elemento.getBoundingClientRect().top + window.scrollY - menuAltura - offsetExtra;
-
-            window.scrollTo({
-                top: posicion,
-                behavior: "smooth"
-            });
+        // Abrir/cerrar acordeón
+        if (openIds.includes(id)) {
+            setOpenIds([]);
+        } else {
+            setOpenIds([id]);
         }
+
+        // Altura del menú sticky
+        const menuAltura = menuRef.current?.offsetHeight || 0;
+
+        // Margen extra dinámico según tamaño de pantalla
+        const esMovil = window.innerWidth <= 768;
+        const offsetExtra = Math.round(menuAltura * 0.9); 
+
+        // Posición de destino: offsetTop es más fiable que getBoundingClientRect()
+        const posicion = elemento.offsetTop - menuAltura - offsetExtra;
+
+        // Scroll suave
+        window.scrollTo({
+            top: posicion,
+            behavior: "smooth"
+        });
     };
 
     // 🟢 Selección de servicios individuales
@@ -86,7 +84,6 @@ function Procedimientos() {
 
     // 🧩 Animación del título
     const handleAnimationComplete = () => {
-        console.log('Animación del título completa');
     };
 
     const tituloAnimado = useMemo(() => (
