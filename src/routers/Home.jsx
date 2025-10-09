@@ -5,7 +5,6 @@ import DarkVeil from "../components/Darkveil"
 import Orb from "../components/Orb"
 import { Link } from "react-router-dom"
 import { FaChevronRight, FaInstagram, FaTiktok, FaFacebook } from "react-icons/fa"
-
 import Cejas from "../assets/eyes-407382_1280.jpg"
 import Legs from "../assets/hermosas-piernas.jpg"
 import Manic from "../assets/cosmetic-1471346_1280.jpg"
@@ -33,6 +32,8 @@ function Home() {
 
     return (
         <div className={style.homeBody}>
+
+            {/* === Inicio === */}
             <div className={style.appContainer}>
                 <DarkVeil
                     className={style.darkveilCanvas}

@@ -37,7 +37,7 @@ function Procedimientos() {
 
         // Margen extra dinámico según tamaño de pantalla
         const esMovil = window.innerWidth <= 768;
-        const offsetExtra = Math.round(menuAltura * 0.9); 
+        const offsetExtra = Math.round(menuAltura * 0.8); 
 
         // Posición de destino: offsetTop es más fiable que getBoundingClientRect()
         const posicion = elemento.offsetTop - menuAltura - offsetExtra;
