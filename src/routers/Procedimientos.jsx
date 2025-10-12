@@ -11,43 +11,39 @@ function Procedimientos() {
 
     const menuRef = useRef(null);
 
-    // 🌀 Función para abrir/cerrar servicios manualmente (acordeón)
-    const toggleServicio = (id) => {
-        if (openIds.includes(id)) {
-            setOpenIds([]);
-        } else {
-            setOpenIds([id]);
-        }
-    };
+// 🌀 Función para abrir/cerrar servicios manualmente (acordeón + scroll)
+const toggleServicio = (id) => {
+    const elemento = document.getElementById(`servicio-${id}`);
 
-    // 🎯 Al seleccionar un servicio desde el menú superior
-    const irAlServicio = (id) => {
-        const elemento = document.getElementById(`servicio-${id}`);
-        if (!elemento) return;
+    if (!elemento) return;
 
-        // Abrir/cerrar acordeón
-        if (openIds.includes(id)) {
-            setOpenIds([]);
-        } else {
-            setOpenIds([id]);
-        }
+    // Si ya está abierto → cerrar todo
+    if (openIds.includes(id)) {
+        setOpenIds([]);
+        return;
+    }
 
-        // Altura del menú sticky
-        const menuAltura = menuRef.current?.offsetHeight || 0;
+    // Si abre uno nuevo → cerrar los demás
+    setOpenIds([id]);
 
-        // Margen extra dinámico según tamaño de pantalla
-        const esMovil = window.innerWidth <= 768;
-        const offsetExtra = Math.round(menuAltura * 0.8); 
+    // Detecta si es móvil
+    const esMovil = window.innerWidth <= 768;
 
-        // Posición de destino: offsetTop es más fiable que getBoundingClientRect()
-        const posicion = elemento.offsetTop - menuAltura - offsetExtra;
+    // Altura del menú sticky
+    const menuAltura = menuRef.current?.offsetHeight || 0;
 
-        // Scroll suave
-        window.scrollTo({
-            top: posicion,
-            behavior: "smooth"
-        });
-    };
+    // Compensación diferente según dispositivo
+    const offsetExtra = esMovil ? 160 : 80;
+
+    // Posición de destino del scroll
+    const posicion = elemento.getBoundingClientRect().top + window.scrollY - menuAltura - offsetExtra;
+
+    // Desplazamiento suave
+    window.scrollTo({
+        top: posicion,
+        behavior: "smooth"
+    });
+};
 
     // 🟢 Selección de servicios individuales
     const toggleSeleccion = (opcion) => {
@@ -117,7 +113,7 @@ function Procedimientos() {
                             <span
                                 key={item.id}
                                 className={style.menuLink}
-                                onClick={() => irAlServicio(item.id)}
+                                onClick={() => toggleServicio(item.id)}
                             >
                                 {item.nombre}
                             </span>

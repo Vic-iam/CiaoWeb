@@ -18,6 +18,11 @@
     text-decoration: none;
     position: relative;
     padding: 10px;
+    transition: all 0.2s;
+}
+
+.containerLink a:hover{
+    color: purple;
 }
 
 .containerLink {

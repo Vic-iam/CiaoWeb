@@ -1,0 +1,67 @@
+body{
+    background-color: black;
+}
+
+.nosotrosContainer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    border: 1px solid #333;
+}
+
+.titleNosotros {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.titleNosotros::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: #34004d;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.titleText {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 30px;
+    color: rgb(117, 1, 133);
+}
+
+.nosotrosText p {
+    margin-top: 10px;
+    color: #ffffff;
+}
+
+.diferente {
+    margin-top: 40px;
+    background: rgb(199, 134, 145);
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.emojis {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.emojis li {
+    margin: 8px 0;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 760px) {
+     .nosotrosContainer{
+        padding-top: 100px;
+     }
+}

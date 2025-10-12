@@ -1,10 +1,11 @@
 'use client'
+import {useState} from "react"
 import style from "./style/Home.module.css"
 import SplitText from "../components/SplitText"
 import DarkVeil from "../components/Darkveil"
 import Orb from "../components/Orb"
 import { Link } from "react-router-dom"
-import { FaChevronRight, FaInstagram, FaTiktok, FaFacebook } from "react-icons/fa"
+import { FaChevronRight, FaInstagram, FaTiktok, FaFacebook, FaWhatsapp } from "react-icons/fa"
 import Cejas from "../assets/eyes-407382_1280.jpg"
 import Legs from "../assets/hermosas-piernas.jpg"
 import Manic from "../assets/cosmetic-1471346_1280.jpg"
@@ -111,11 +112,11 @@ function Home() {
                                     <FaTiktok />
                                 </a>
                                 <a href="https://www.facebook.com/tusuario" target="_blank" rel="noopener noreferrer">
-                                     <FaFacebook />
+                                    <FaFacebook />
                                 </a>
                             </div>
                         </div>
-                        <p style={{color: "#E1BEE7"}}>"Amarse a uno mismo es el comienzo de un romance para toda la vida"</p>
+                        <p style={{ color: "#E1BEE7" }}>"Amarse a uno mismo es el comienzo de un romance para toda la vida"</p>
                     </div>
                 </section>
             </div>
