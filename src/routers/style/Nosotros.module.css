@@ -1,20 +1,21 @@
-body{
+body {
     background-color: black;
 }
 
+/* Contenedor general */
 .nosotrosContainer {
     max-width: 900px;
-    margin: 10px auto;
+    margin: 0 auto;
     padding: 60px 20px;
     color: #ffffff;
     font-family: 'Poppins', sans-serif;
     line-height: 1.7;
-    border: 1px solid white;
 }
 
+/* Título principal */
 .titleNosotros {
     text-align: center;
-    font-size: 2.2rem;
+    font-size: 3rem;
     font-weight: 600;
     margin-bottom: 40px;
     position: relative;
@@ -30,6 +31,12 @@ body{
     border-radius: 2px;
 }
 
+.nosotrosText{
+    border: 1px solid white;
+    padding: 10px;
+}
+
+/* Subtítulos */
 .titleText {
     font-size: 1.3rem;
     font-weight: 600;
@@ -37,11 +44,13 @@ body{
     color: rgb(117, 1, 133);
 }
 
+/* Párrafos */
 .nosotrosText p {
     margin-top: 10px;
     color: #ffffff;
 }
 
+/* Sección destacada */
 .diferente {
     margin-top: 40px;
     background: pink;
@@ -49,6 +58,7 @@ body{
     border-radius: 12px;
 }
 
+/* Lista con emojis */
 .emojis {
     list-style: none;
     padding: 0;
@@ -58,4 +68,12 @@ body{
 .emojis li {
     margin: 8px 0;
     font-size: 1.1rem;
+}
+
+@media (max-width: 760px) {
+
+    .titleNosotros{
+        padding-top: 80px;
+    }
+    
 }
