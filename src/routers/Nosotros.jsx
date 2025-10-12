@@ -1,13 +1,33 @@
 import React from 'react'
 import style from "./style/Nosotros.module.css"
+import SplitText from "../components/SplitText";
+import DarkVeil from '../components/Darkveil';
 
 function Nosotros() {
+
+    const handleAnimationComplete = () => {
+    };
+
     return (
+
 
         <div className={style.nosotrosContainer}>
 
             <div className={style.titleNosotros}>
-                <h2>Sobre nosotros</h2>
+                <SplitText
+                    text="¡Sobre nosotros!"
+                    className={style.content}
+                    delay={30}
+                    duration={0.6}
+                    ease="power3.out"
+                    splitType="chars"
+                    from={{ opacity: 0, y: 40 }}
+                    to={{ opacity: 1, y: 0 }}
+                    threshold={0.1}
+                    rootMargin="-100px"
+                    textAlign="center"
+                    onLetterAnimationComplete={handleAnimationComplete}
+                />
             </div>
 
             <div className={style.nosotrosText}>

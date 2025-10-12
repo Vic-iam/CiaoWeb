@@ -4,12 +4,12 @@ body{
 
 .nosotrosContainer {
     max-width: 900px;
-    margin: 0 auto;
+    margin: 10px auto;
     padding: 60px 20px;
     color: #ffffff;
     font-family: 'Poppins', sans-serif;
     line-height: 1.7;
-    border: 1px solid #333;
+    border: 1px solid white;
 }
 
 .titleNosotros {
@@ -44,7 +44,7 @@ body{
 
 .diferente {
     margin-top: 40px;
-    background: rgb(199, 134, 145);
+    background: pink;
     padding: 25px;
     border-radius: 12px;
 }
@@ -58,10 +58,4 @@ body{
 .emojis li {
     margin: 8px 0;
     font-size: 1.1rem;
-}
-
-@media (max-width: 760px) {
-     .nosotrosContainer{
-        padding-top: 100px;
-     }
 }
