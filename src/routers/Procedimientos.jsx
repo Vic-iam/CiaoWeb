@@ -86,7 +86,7 @@ const toggleServicio = (id) => {
         <SplitText
             text="Nuestros Servicios"
             className={style.titleContainer}
-            delay={100}
+            delay={30}
             duration={0.6}
             ease="power3.out"
             splitType="chars"
