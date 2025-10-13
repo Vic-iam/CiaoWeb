@@ -64,3 +64,25 @@
     height: 400px;
     gap: 30px;
 }
+
+
+@media (max-width: 760px) {
+
+    .contactoContainer{
+        padding-top: 150px;
+    }
+
+    .cardContainer{
+        gap: 0px;
+    }
+    
+    .card1,.card2,.card3{
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: 10px;
+        height: 250px;
+        width: 400px;
+        font-size: 1rem;
+    }
+}
