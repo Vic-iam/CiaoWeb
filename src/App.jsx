@@ -6,6 +6,7 @@ import Home from './routers/Home'
 import Nosotros from './routers/Nosotros'
 import Procedimientos from './routers/Procedimientos'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import 'leaflet/dist/leaflet.css'; 
 
 function App() {
   return (

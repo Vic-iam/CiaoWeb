@@ -98,7 +98,7 @@ function Home() {
                         </div>
 
                         <div>
-                            <Link to="/contactos" className={`${style.btnBase} ${style.verUbicacion}`}>
+                            <Link to="/contactos" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}   className={`${style.btnBase} ${style.verUbicacion}`}>
                                 VER UBICACIÓN <FaChevronRight />
                             </Link>
                         </div>
