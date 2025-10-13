@@ -1,5 +1,5 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import style from "./style/MyMap.module.css";
+import style from "./style/myMap.module.css";
 
 function MyMap() {
   const position = [-34.596649866952575, -58.44277223304099];

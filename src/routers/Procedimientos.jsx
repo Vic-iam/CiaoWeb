@@ -1,5 +1,5 @@
 import { useState, useRef, useMemo } from 'react';
-import style from "./style/Procedimientos.module.css";
+import style from "./style/procedimientos.module.css";
 import { FaChevronRight, FaWhatsapp } from "react-icons/fa";
 import servicios from "../data/servicios.json";
 import SplitText from "../components/SplitText";

@@ -1,11 +1,11 @@
 'use client'
 import {useState} from "react"
-import style from "./style/Home.module.css"
+import style from "./style/home.module.css"
 import SplitText from "../components/SplitText"
 import DarkVeil from "../components/Darkveil"
 import Orb from "../components/Orb"
 import { Link } from "react-router-dom"
-import { FaChevronRight, FaInstagram, FaTiktok, FaFacebook, FaWhatsapp } from "react-icons/fa"
+import { FaChevronRight, FaInstagram, FaTiktok, FaFacebook } from "react-icons/fa"
 import Cejas from "../assets/eyes-407382_1280.jpg"
 import Legs from "../assets/hermosas-piernas.jpg"
 import Manic from "../assets/cosmetic-1471346_1280.jpg"
