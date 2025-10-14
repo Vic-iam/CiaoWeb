@@ -15,8 +15,8 @@ function Footer() {
           <ul>
             <li><a href="/">Inicio</a></li>
             <li><a href="/procedimientos">Servicios</a></li>
-            <li><a href="/contacto">Contacto</a></li>
             <li><a href="/nosotros">Nosotros</a></li>
+            <li><a href="/contactos">Contacto</a></li>
           </ul>
         </div>
 
