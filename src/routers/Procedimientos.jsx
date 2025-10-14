@@ -165,9 +165,9 @@ function Procedimientos() {
                             params.set("servicios", seleccionados.join(","));
                             window.location.href = `/reservas?servicios=${seleccionados.join(",")}`;;
                         }}
-                        className={style.btnReservar}
+                        className={style.btnWhatsAppFloat}
                     >
-                        Continuar con la reserva
+                        Pedir turno de servicio
                     </button>
                 </div>
 

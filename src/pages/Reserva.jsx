@@ -50,9 +50,9 @@ export default function Reserva() {
 
   return (
     <div className={style.formContainer}>
-      <h2>Reservar turno</h2>
+      <h2 className={style.titleFormContainer}>Reservar turno</h2>
       {serviciosSeleccionados.length > 0 && (
-        <p><strong>Servicios elegidos:</strong> {serviciosSeleccionados.join(", ")}</p>
+        <p className={style.pTurno}><strong>Elegiste el servicio:</strong> {serviciosSeleccionados.join(", ")}</p>
       )}
 
       <form onSubmit={handleSubmit} className={style.form}>
@@ -79,7 +79,7 @@ export default function Reserva() {
 
         {error && <p style={{ color: "red" }}>{error}</p>}
 
-        <button type="submit" disabled={loading}>
+        <button type="submit" disabled={loading} className={style.btn}>
           {loading ? "Reservando..." : "Confirmar turno"}
         </button>
       </form>
