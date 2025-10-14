@@ -7,6 +7,8 @@ import Nosotros from './routers/Nosotros'
 import Procedimientos from './routers/Procedimientos'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import 'leaflet/dist/leaflet.css'; 
+import Reserva from './pages/Reserva'
+import Admin from './pages/Admin'
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route path='/nosotros' element={<Nosotros />} />
           <Route path='/procedimientos' element={<Procedimientos />} />
           <Route path='/contactos' element={<Contactos />} />
+          <Route path='/reservas' element={<Reserva />} />
+          <Route path='/admin' element={<Admin />} />
         </Routes>
         <Footer />
       </BrowserRouter>

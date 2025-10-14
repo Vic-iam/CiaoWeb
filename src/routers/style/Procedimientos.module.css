@@ -233,6 +233,22 @@
   transform: scale(1.05);
 }
 
+.btnReservar {
+  background-color: #8c4fb3;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  margin-top: 20px;
+  display: block;
+  width: fit-content;
+}
+.btnReservar:hover {
+  background-color: #a56bcf;
+}
+
 /* =========================
    TOAST / ALERTAS
 ========================= */

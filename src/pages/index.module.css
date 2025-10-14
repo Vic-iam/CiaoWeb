@@ -1,0 +1,17 @@
+.formContainer{
+    color: white;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px white solid;
+}
+
+.form{
+    max-width: 500px;
+    display: grid;
+    gap: 20px;
+    padding: 10px;
+}
