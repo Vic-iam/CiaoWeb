@@ -78,7 +78,7 @@ export default function Admin() {
     )
   }
 
-  return (
+  return ( 
     <div style={{ maxWidth: 900, margin: '0 auto', padding: "20px" , color: "white"}}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
         <h2>Panel - Turnos</h2>
