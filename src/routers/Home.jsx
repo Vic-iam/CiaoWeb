@@ -85,8 +85,11 @@ function Home() {
 
             {/* === Orb + info === */}
             <div className={style.orbContainer}>
-                <Orb hoverIntensity={0} rotateOnHover={true} hue={282} forceHoverState={false} />
-
+                
+                <div className={style.orbBackground}>
+                    <Orb hoverIntensity={0} rotateOnHover={true} hue={282} forceHoverState={false} />
+                </div>
+                
                 <section className={style.publContainer}>
                     <div className={style.publDescription}>
                         <div className={style.linea}></div>

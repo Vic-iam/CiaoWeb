@@ -25,14 +25,14 @@ body {
     height: 600px;
     transform: translate(-50%, -50%);
     z-index: 0;
-    opacity: 0.25;
+    opacity: 10;
     filter: blur(30px);
 }
 
 /* Contenido encima del orb */
 .content {
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 .titleContacto {
