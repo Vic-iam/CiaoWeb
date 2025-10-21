@@ -8,42 +8,48 @@ function Procedimientos() {
     const [openIds, setOpenIds] = useState([]);
     const [seleccionados, setSeleccionados] = useState([]);
     const [alerta, setAlerta] = useState(null);
+    const [mostrarResumen, setMostrarResumen] = useState(false);
 
     const menuRef = useRef(null);
 
-    // 🌀 Función para abrir/cerrar servicios manualmente (acordeón + scroll)
-    const toggleServicio = (id) => {
-        const elemento = document.getElementById(`servicio-${id}`);
+const toggleServicio = (id) => {
+    const elemento = document.getElementById(`servicio-${id}`);
+    if (!elemento) return;
 
-        if (!elemento) return;
+    // Si el mismo está abierto → cerrar todo
+    if (openIds.includes(id)) {
+        setOpenIds([]);
+        return;
+    }
 
-        // Si ya está abierto → cerrar todo
-        if (openIds.includes(id)) {
-            setOpenIds([]);
-            return;
-        }
+    // 🔹 Cerrar primero el abierto actual (si hay)
+    if (openIds.length > 0) {
+        setOpenIds([]);
+        // Esperar un breve momento antes de abrir el nuevo
+        setTimeout(() => abrirYDesplazar(id, elemento), 150);
+    } else {
+        abrirYDesplazar(id, elemento);
+    }
+};
 
-        // Si abre uno nuevo → cerrar los demás
-        setOpenIds([id]);
+// 🧭 Función auxiliar que abre el servicio y hace scroll
+const abrirYDesplazar = (id, elemento) => {
+    setOpenIds([id]);
 
-        // Detecta si es móvil
-        const esMovil = window.innerWidth <= 768;
+    // Detectar móvil
+    const esMovil = window.innerWidth <= 768;
+    const menuAltura = menuRef.current?.offsetHeight || 0;
+    const offsetExtra = esMovil ? 160 : 80;
 
-        // Altura del menú sticky
-        const menuAltura = menuRef.current?.offsetHeight || 0;
-
-        // Compensación diferente según dispositivo
-        const offsetExtra = esMovil ? 160 : 80;
-
-        // Posición de destino del scroll
+    // Dar un pequeño delay para que el acordeón se expanda visualmente antes del scroll
+    setTimeout(() => {
         const posicion = elemento.getBoundingClientRect().top + window.scrollY - menuAltura - offsetExtra;
-
-        // Desplazamiento suave
         window.scrollTo({
             top: posicion,
-            behavior: "smooth"
+            behavior: "smooth",
         });
-    };
+    }, 250);
+};
 
     // 🟢 Selección de servicios individuales
     const toggleSeleccion = (opcion) => {
@@ -171,7 +177,8 @@ function Procedimientos() {
                     </button>
                 </div>*/}
 
-                📱 Botón flotante de WhatsApp
+                
+
                 <button onClick={enviarWhatsApp} className={style.btnWhatsAppFloat}>
                     <FaWhatsapp />
                 </button>
