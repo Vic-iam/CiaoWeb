@@ -1,23 +1,51 @@
+body {
+    background-color: black;
+}
+
+/* Contenedor principal */
 .contactoContainer {
+    position: relative;
     display: flex;
     justify-content: center;
     text-align: center;
     flex-direction: column;
+    font-family: 'Poppins', sans-serif;
     color: white;
-    padding-top: 100px;
+    padding-top: 70px;
     gap: 20px;
+    overflow: hidden;
+}
+
+/* Orb de fondo */
+.orbBackground {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    opacity: 0.25;
+    filter: blur(30px);
+}
+
+/* Contenido encima del orb */
+.content {
+    position: relative;
+    z-index: 2;
 }
 
 .titleContacto {
-    font-size: 2.5rem
+    font-size: 3rem;
 }
 
-.contactoText{
+.contactoText {
     padding: 20px;
     text-align: center;
     font-size: 1.4rem;
 }
 
+/* Tarjetas */
 .cardContainer {
     display: flex;
     justify-content: center;
@@ -26,57 +54,54 @@
     gap: 20px;
 }
 
-.card1 {
+.card1, .card2, .card3 {
     display: flex;
     justify-content: center;
-    gap: 30px;
     flex-direction: column;
     padding: 20px 20px;
-    background-color: #333;
     width: 250px;
     height: 400px;
-
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card2 {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 20px 20px;
-    background-color: #290245;
-    width: 250px;
-    height: 400px;
-}   
+.card1 { background-color: #333; }
+.card2 { background-color: #290245; }
+.card3 { background-color: #333; }
 
-.card2 li{
+.card2 li {
     list-style: none;
-    padding: 0px;
+    padding: 0;
     margin-top: 15px;
 }
 
-.card3 {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 20px 20px;
-    background-color: #333;
-    width: 250px;
-    height: 400px;
-    gap: 30px;
+.card1:hover, .card2:hover, .card3:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
+/* Mapa */
+.mapContainer {
+    margin-top: 50px;
+}
 
+/* Responsivo */
 @media (max-width: 760px) {
-
-    .contactoContainer{
+    .contactoContainer {
         padding-top: 150px;
     }
 
-    .cardContainer{
-        gap: 0px;
+    .orbBackground {
+        width: 400px;
+        height: 400px;
+        filter: blur(20px);
     }
-    
-    .card1,.card2,.card3{
+
+    .cardContainer {
+        gap: 0;
+    }
+
+    .card1, .card2, .card3 {
         align-items: center;
         justify-content: center;
         flex-direction: row;

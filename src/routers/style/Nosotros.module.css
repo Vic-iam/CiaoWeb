@@ -4,12 +4,33 @@ body {
 
 /* Contenedor general */
 .nosotrosContainer {
+    position: relative;
     max-width: 900px;
     margin: 0 auto;
     padding: 60px 20px;
     color: #ffffff;
     font-family: 'Poppins', sans-serif;
     line-height: 1.7;
+    overflow: hidden;
+}
+
+/* Orb de fondo */
+.orbBackground {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    opacity: 10; /* lo hace más sutil */
+    filter: blur(30px);
+}
+
+/* Contenido encima del orb */
+.content {
+    position: relative;
+    z-index: 1;
 }
 
 /* Título principal */
@@ -31,9 +52,12 @@ body {
     border-radius: 2px;
 }
 
-.nosotrosText{
+.nosotrosText {
     border: 1px solid white;
     padding: 20px;
+    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
 }
 
 /* Subtítulos */
@@ -72,9 +96,12 @@ body {
 }
 
 @media (max-width: 760px) {
-
-    .titleNosotros{
+    .titleNosotros {
         padding-top: 80px;
     }
-    
+    .orbBackground {
+        width: 400px;
+        height: 400px;
+        filter: blur(20px);
+    }
 }
