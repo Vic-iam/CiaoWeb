@@ -61,12 +61,12 @@ function Procedimientos() {
     };
 
     // 💬 Enviar WhatsApp con los servicios seleccionados
-    // const enviarWhatsApp = () => {
-    //     if (seleccionados.length === 0) return mostrarAlerta("Selecciona al menos un servicio");
-    //     const numero = "1133973900";
-    //     const mensaje = encodeURIComponent(`Hola, quiero pedir turno para: ${seleccionados.join(", ")}`);
-    //     window.open(`https://wa.me/${numero}?text=${mensaje}`, "_blank");
-    // };
+     const enviarWhatsApp = () => {
+         if (seleccionados.length === 0) return mostrarAlerta("Selecciona al menos un servicio");
+        const numero = "1133973900";
+         const mensaje = encodeURIComponent(`Hola, quiero pedir turno para: ${seleccionados.join(", ")}`);
+         window.open(`https://wa.me/${numero}?text=${mensaje}`, "_blank");
+     };
 
     // ↔️ Scroll lateral del menú
     const scroll = (direction) => {
@@ -157,7 +157,7 @@ function Procedimientos() {
                     </div>
                 ))}
 
-                <div>
+                {/*  <div>
                     <button
                         onClick={() => {
                             if (seleccionados.length === 0) return mostrarAlerta("Selecciona al menos un servicio");
@@ -169,12 +169,12 @@ function Procedimientos() {
                     >
                         Pedir turno de servicio
                     </button>
-                </div>
+                </div>*/}
 
-                {/* 📱 Botón flotante de WhatsApp
+                📱 Botón flotante de WhatsApp
                 <button onClick={enviarWhatsApp} className={style.btnWhatsAppFloat}>
                     <FaWhatsapp />
-                </button> */}
+                </button>
 
                 {/* ⚠️ Toast de alerta */}
                 {alerta && <div className={style.toast}>{alerta}</div>}
