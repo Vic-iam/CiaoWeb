@@ -8,7 +8,7 @@ function Procedimientos() {
     const [openIds, setOpenIds] = useState([]);
     const [seleccionados, setSeleccionados] = useState([]);
     const [alerta, setAlerta] = useState(null);
-    const [mostrarResumen, setMostrarResumen] = useState(false);
+   // const [mostrarResumen, setMostrarResumen] = useState(false);
 
     const menuRef = useRef(null);
 
