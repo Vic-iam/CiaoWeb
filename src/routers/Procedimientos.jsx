@@ -69,7 +69,7 @@ const abrirYDesplazar = (id, elemento) => {
     // 💬 Enviar WhatsApp con los servicios seleccionados
      const enviarWhatsApp = () => {
          if (seleccionados.length === 0) return mostrarAlerta("Selecciona al menos un servicio");
-        const numero = "1133973900";
+        const numero = "1123924974";
          const mensaje = encodeURIComponent(`Hola, quiero pedir turno para: ${seleccionados.join(", ")}`);
          window.open(`https://wa.me/${numero}?text=${mensaje}`, "_blank");
      };

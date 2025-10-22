@@ -301,6 +301,7 @@
   }
 
   .menuWrapper {
-    top: 11%;
+    height: 60px;
+    top: 100px;
   }
 }
