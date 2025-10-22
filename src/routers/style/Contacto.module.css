@@ -83,6 +83,7 @@ body {
 /* Mapa */
 .mapContainer {
     margin-top: 50px;
+    z-index: 2;
 }
 
 /* Responsivo */
