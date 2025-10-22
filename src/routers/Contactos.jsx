@@ -1,6 +1,6 @@
 import React from 'react';
 import MyMap from '../components/MyMap';
-import style from "./style/contacto.module.css";
+import style from "./style/Contacto.module.css";
 import SplitText from "../components/SplitText";
 import Orb from "../components/Orb";
 

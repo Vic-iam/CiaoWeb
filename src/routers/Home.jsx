@@ -1,6 +1,6 @@
 'use client'
 import {useState} from "react"
-import style from "./style/home.module.css"
+import style from "./style/Home.module.css"
 import SplitText from "../components/SplitText"
 import DarkVeil from "../components/Darkveil"
 import Orb from "../components/Orb"
@@ -11,6 +11,7 @@ import Legs from "../assets/hermosas-piernas.jpg"
 import Manic from "../assets/cosmetic-1471346_1280.jpg"
 
 function Home() {
+
     const handleAnimationComplete = () => { }
 
     const serviciosHome = [
@@ -32,6 +33,7 @@ function Home() {
     ]
 
     return (
+
         <div className={style.homeBody}>
 
             {/* === Inicio === */}

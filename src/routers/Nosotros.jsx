@@ -1,5 +1,5 @@
 import React from 'react';
-import style from "./style/nosotros.module.css";
+import style from "./style/Nosotros.module.css";
 import SplitText from "../components/SplitText";
 import Orb from "../components/Orb";
 
