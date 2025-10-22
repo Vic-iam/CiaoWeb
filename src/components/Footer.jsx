@@ -24,7 +24,7 @@ function Footer() {
           <h3>Síguenos</h3>
           <a href="https://www.instagram.com/ciaobellaba?igsh=OGw5d29kYnRwMmN6" >Instagram</a> |{" "}
           <a href="https://www.tiktok.com/@ciaobellaestetica7?is_from_webapp=1&sender_device=pc">TikTok</a> |{" "}
-          <a href="">Facebook</a>
+          <a href="https://www.facebook.com/profile.php?id=61582412773854">Facebook</a>
         </div>
       </footer>
 

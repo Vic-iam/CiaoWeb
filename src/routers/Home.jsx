@@ -114,7 +114,7 @@ function Home() {
                                 <a href="https://www.tiktok.com/@ciaobellaestetica7?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer">
                                     <FaTiktok />
                                 </a>
-                                <a href="https://www.facebook.com/tusuario" target="_blank" rel="noopener noreferrer">
+                                <a href="https://www.facebook.com/profile.php?id=61582412773854" target="_blank" rel="noopener noreferrer">
                                     <FaFacebook />
                                 </a>
                             </div>
