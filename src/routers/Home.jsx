@@ -46,6 +46,7 @@ function Home() {
                     scanlineFrequency={4}
                     warpAmount={0.03}
                     resolutionScale={1}
+                    
                 />
 
                 <SplitText
