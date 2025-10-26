@@ -40,6 +40,8 @@ body {
 }
 
 .contactoText {
+    margin: 10px auto;
+    max-width: 600px;
     padding: 20px;
     font-size: 1.4rem;
 }
@@ -50,7 +52,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
 }
 
 .card1, .card2, .card3 {
@@ -64,15 +66,20 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.horarioLista {
+  display: grid;
+  grid-template-columns: 120px auto; /* primera columna para los días */
+  gap: 6px 15px;                     /* espacio entre filas y columnas */
+  margin-top: 10px;
+  text-align: left;
+  font-size: 1.1rem;
+}
+
 .card1 { background-color: #333; }
 .card2 { background-color: #290245; }
 .card3 { background-color: #333; }
 
-.card2 li {
-    list-style: none;
-    padding: 0;
-    margin-top: 15px;
-}
+
 
 .card1:hover, .card2:hover, .card3:hover {
     transform: translateY(-5px);
@@ -101,6 +108,10 @@ body {
         gap: 0;
     }
 
+    .contactoText{
+        font-size: 1rem;
+    }
+
     .card1, .card2, .card3 {
         align-items: center;
         justify-content: center;
@@ -110,4 +121,10 @@ body {
         width: 400px;
         font-size: 1rem;
     }
+
+  .horarioLista {
+    grid-template-columns: 100px auto;
+    gap: 4px 10px;
+    font-size: 0.9rem;
+  }
 }

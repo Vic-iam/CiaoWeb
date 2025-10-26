@@ -11,7 +11,7 @@ function Contactos() {
     return (
         <>
             <div className={style.contactoContainer}>
-                
+
                 {/* Orb de fondo */}
                 <div className={style.orbBackground}>
                     <Orb hoverIntensity={0} rotateOnHover={true} hue={282} forceHoverState={false} />
@@ -38,8 +38,8 @@ function Contactos() {
 
                     <div className={style.contactoText}>
                         <p>
-                            "En CiaoBella nos encanta cuidar de tu belleza y bienestar. 
-                            Si tenés dudas, consultas o querés agendar tu visita, no dudes en contactarnos. 
+                            "En CiaoBella nos encanta cuidar de tu belleza y bienestar.
+                            Si tenés dudas, consultas o querés agendar tu visita, no dudes en contactarnos.
                             ¡Estamos para ayudarte a sentirte y verte increíble!"
                         </p>
                     </div>
@@ -52,14 +52,14 @@ function Contactos() {
 
                         <div className={style.card2}>
                             <h2>Horario laboral:</h2>
-                            <ul>
-                                <li>Lunes 10:00 - 20:00</li>
-                                <li>Martes 10:00 - 20:00</li>
-                                <li>Miércoles 10:00 - 20:00</li>
-                                <li>Jueves 10:00 - 20:00</li>
-                                <li>Viernes 10:00 - 20:00</li>
-                                <li>Sábado 11:00 - 20:00</li>
-                            </ul>
+                            <div className={style.horarioLista}>
+                                <div>Lunes:</div><div>10:00 - 20:00</div>
+                                <div>Martes:</div><div>10:00 - 20:00</div>
+                                <div>Miércoles:</div><div>10:00 - 20:00</div>
+                                <div>Jueves:</div><div>10:00 - 20:00</div>
+                                <div>Viernes:</div><div>10:00 - 20:00</div>
+                                <div>Sábado:</div><div>11:00 - 20:00</div>
+                            </div>
                         </div>
 
                         <div className={style.card3}>

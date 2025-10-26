@@ -97,7 +97,7 @@ function Home() {
                     <div className={style.publDescription}>
                         <div className={style.linea}></div>
                         <h2>Visítanos</h2>
-                        <div>
+                        <div className={style.horarios}>
                             <h3>Horario de trabajo</h3>
                             <p>Serrano 479, Ciudad Autónoma de Buenos Aires</p>
                             <p>Lunes-Viernes: 11 a.m - 8 p.m | Sábado: 10 a.m - 8 p.m</p>

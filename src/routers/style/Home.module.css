@@ -48,6 +48,7 @@
   gap: 20px;
   padding: 20px;
   margin: 10px;
+  padding: 20px 0;
 }
 
 .containerDescription {
@@ -63,11 +64,11 @@
   width: 100%;
   object-fit: cover;
   border-radius: 5px;
-  box-shadow: 0 4px 10px var(--accent);
+  box-shadow: 0 2px 7px white;
 }
 
 .image {
-  width: 300px;
+  width: 380px;
   height: 350px;
 }
 
@@ -76,6 +77,7 @@
   flex-direction: column;
   align-items: center;
   gap: 5px;
+  width: 380px;
   background-color: var(--primary-bg);
   border: 1px solid var(--primary-text);
   padding: 10px;
@@ -199,7 +201,7 @@
   box-shadow: 0 4px 10px rgba(179, 179, 179, 0.2);
   opacity: 10;
   height: 500px;
-  width: 500px;
+  width: 1200px;
 }
 
 .publContainer h2 {
@@ -208,10 +210,10 @@
 
 .publDescription {
   display: grid;
-  justify-content: center;
-  align-items: center;
+  justify-content:center;
   text-align: center;
-  gap: 5px;
+
+  gap: 30px;
 }
 
 .linea {
@@ -224,6 +226,12 @@
 
 .publContainer p {
   font-size: 1.2rem;
+}
+
+.horarios{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .socialLinks {
@@ -274,8 +282,8 @@
   }
 
   .publContainer {
-    width: 250px;
-    height: 400px;
+    width: 300px;
+    height: 500px;
   }
 
   .publContainer h2 {
@@ -285,7 +293,10 @@
   .publContainer p{
     font-size: 1rem;
   }
-
+  
+  .description{
+    width: 300px;
+  }
 
 
 }

@@ -60,7 +60,7 @@ function Nosotros() {
 
                     {/* Diferenciales */}
                     <div className={style.diferente}>
-                        <div className={style.titleText}>¿Qué nos hace diferentes?</div>
+                        <div className={style.titleTextDiferente}>¿Qué nos hace diferentes?</div>
                         <ul className={style.emojis}>
                             <li>🤍 Atención cercana y personalizada</li>
                             <li>💄 Amplia variedad de tratamientos para rostro, cuerpo, manos y pies.</li>
