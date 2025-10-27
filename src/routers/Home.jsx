@@ -87,6 +87,7 @@ function Home() {
                 </div>
             </section>
 
+
             <section className={style.valoresSection}>
                 <h2>Nuestros valores</h2>
                 <div className={style.valoresContainer}>
@@ -104,6 +105,7 @@ function Home() {
                     </div>
                 </div>
             </section>
+
 
             {/* === Orb + info === */}
             <div className={style.orbContainer}>
