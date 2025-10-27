@@ -1,8 +1,0 @@
-const violetIcon = new L.Icon({
-  iconUrl: new URL("../assets/marker-violet.png", import.meta.url).href,
-  shadowUrl: shadowUrl, // podés usar la misma sombra
-  iconSize: [35, 50],
-  iconAnchor: [17, 45],
-  popupAnchor: [0, -40],
-});
-

@@ -51,6 +51,10 @@
   padding: 20px 0;
 }
 
+.containerProc h1 {
+  font-size: 3rem;
+}
+
 .containerDescription {
   display: flex;
   justify-content: center;
@@ -64,7 +68,7 @@
   width: 100%;
   object-fit: cover;
   border-radius: 5px;
-  box-shadow: 0 2px 7px white;
+  box-shadow: 0 2px 4px white;
 }
 
 .image {
@@ -170,6 +174,48 @@
   animation: slideIn 0.3s, fadeOut 0.3s 2.7s forwards;
 }
 
+.valoresSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.valoresSection h2 {
+  font-size: 3rem;
+}
+
+.valoresContainer {
+  margin: 10px auto;
+  max-width: 900px;
+  display: flex;
+  gap: 30px;
+}
+
+.card1,
+.card2,
+.card3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 40px;
+  background-color: #290245;
+  padding: 20px;
+  width: 250px;
+  height: 400px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card1:hover,
+.card2:hover,
+.card3:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
 /* === Publicidad === */
 .orbContainer {
   height: 600px;
@@ -177,15 +223,15 @@
 }
 
 .orbBackground {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    transform: translate(-50%, -50%);
-    z-index: 0;
-    opacity: 10;
-    filter: blur(30px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  opacity: 10;
+  filter: blur(30px);
 }
 
 .publContainer {
@@ -210,7 +256,7 @@
 
 .publDescription {
   display: grid;
-  justify-content:center;
+  justify-content: center;
   text-align: center;
 
   gap: 30px;
@@ -228,7 +274,7 @@
   font-size: 1.2rem;
 }
 
-.horarios{
+.horarios {
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -253,13 +299,18 @@
 }
 
 .icons a:hover {
-  color: var(--hover); 
+  color: var(--hover);
 }
 
 /* === Responsive === */
 @media (max-width: 760px) {
   .content {
     font-size: 2rem;
+  }
+
+  .containerProc h1,
+  .valoresSection h2 {
+    font-size: 2.5rem;
   }
 
   .image {
@@ -290,12 +341,26 @@
     font-size: 1.5rem;
   }
 
-  .publContainer p{
+  .publContainer p {
     font-size: 1rem;
   }
-  
-  .description{
+
+  .description {
     width: 300px;
+  }
+
+  .valoresContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card1,
+  .card2,
+  .card3 {
+    height: 300px;
+    width: 300px;
+    gap: none;
   }
 
 

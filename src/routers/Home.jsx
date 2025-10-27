@@ -1,5 +1,5 @@
 'use client'
-import {useState} from "react"
+import { useState } from "react"
 import style from "./style/Home.module.css"
 import SplitText from "../components/SplitText"
 import DarkVeil from "../components/Darkveil"
@@ -46,7 +46,7 @@ function Home() {
                     scanlineFrequency={4}
                     warpAmount={0.03}
                     resolutionScale={1}
-                    
+
                 />
 
                 <SplitText
@@ -67,6 +67,7 @@ function Home() {
 
             {/* === Sección de servicios === */}
             <section className={style.containerProc}>
+                <h1>Nuestros servicios</h1>
                 <div className={style.containerDescription}>
                     {serviciosHome.map((s, i) => (
                         <div key={i} className={style.description}>
@@ -86,13 +87,31 @@ function Home() {
                 </div>
             </section>
 
+            <section className={style.valoresSection}>
+                <h2>Nuestros valores</h2>
+                <div className={style.valoresContainer}>
+                    <div className={style.card1}>
+                        <h3>✨ Cuidado personalizado</h3>
+                        <p>Cada tratamiento está pensado para resaltar tu belleza única.</p>
+                    </div>
+                    <div className={style.card2}>
+                        <h3>🌿 Productos de calidad</h3>
+                        <p>Usamos insumos profesionales y amigables con la piel.</p>
+                    </div>
+                    <div className={style.card3}>
+                        <h3>💖 Espacio de bienestar</h3>
+                        <p>Relajate, desconectá y recargá energía en un ambiente tranquilo.</p>
+                    </div>
+                </div>
+            </section>
+
             {/* === Orb + info === */}
             <div className={style.orbContainer}>
-                
+
                 <div className={style.orbBackground}>
                     <Orb hoverIntensity={0} rotateOnHover={true} hue={282} forceHoverState={false} />
                 </div>
-                
+
                 <section className={style.publContainer}>
                     <div className={style.publDescription}>
                         <div className={style.linea}></div>
@@ -104,7 +123,7 @@ function Home() {
                         </div>
 
                         <div>
-                            <Link to="/contactos" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}   className={`${style.btnBase} ${style.verUbicacion}`}>
+                            <Link to="/contactos" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className={`${style.btnBase} ${style.verUbicacion}`}>
                                 VER UBICACIÓN <FaChevronRight />
                             </Link>
                         </div>
