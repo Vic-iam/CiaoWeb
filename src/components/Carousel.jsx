@@ -1,50 +1,53 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaStar } from "react-icons/fa";
-import  "./style/Carousel.css"
+import "./style/Carousel.css";
 
 function Carousel() {
+  const sliderRef = useRef(null);
 
-var settings = {
-  dots: true,
-  infinite: true,
-  speed: 3000,
-  autoplay: true, 
-  autoplaySpeed: 300,
-  slidesToShow: 4,
-  slidesToScroll: 1, 
-  pauseOnHover: true,
-  arrows: true,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: true,
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 1500,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    pauseOnHover: true,
+    arrows: true,
+    cssEase: "ease-in-out",
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: { slidesToShow: 3, slidesToScroll: 1 },
       },
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+          centerMode: true,
+          centerPadding: "0px",
+        },
       },
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      },
-    },
-  ],
-};
+    ],
+  };
 
-    const testimonios = [
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (sliderRef.current) {
+        sliderRef.current.slickGoTo(0); // fuerza actualización
+        window.dispatchEvent(new Event("resize")); // recalcula posiciones
+      }
+    }, 300);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const testimonios = [
     {
       id: 1,
       nombre: "Sthefania Vitriago",
@@ -95,24 +98,21 @@ var settings = {
     },
   ];
 
-
-   return (
+  return (
     <div className="SliderContainer">
-        <h2>Testimonios de nuestras clientes</h2>
-      <Slider {...settings}>
-      {testimonios.map((t) => (
-        <div key={t.id} className="SliderStyles"> 
-         <p className="SliderText"> {t.test} </p>
-          <div className="estrella">
-            {[...Array(t.stars)].map((_,i) => (
-                <FaStar key={i} className="styleEstrella" />
-            ))}
+      <h2>Testimonios de nuestras clientes</h2>
+      <Slider ref={sliderRef} {...settings}>
+        {testimonios.map((t) => (
+          <div key={t.id} className="SliderStyles">
+            <p className="SliderText">{t.test}</p>
+            <div className="estrella">
+              {[...Array(t.stars)].map((_, i) => (
+                <FaStar key={i} />
+              ))}
+            </div>
+            <h4 className="textNombre">{t.nombre}</h4>
           </div>
-          <h4 className="textNombre">{t.nombre}</h4>
-        </div>
-      ))}
-
-
+        ))}
       </Slider>
     </div>
   );
