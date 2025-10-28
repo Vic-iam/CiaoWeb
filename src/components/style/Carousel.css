@@ -47,7 +47,6 @@
     color: gold;
 }
 
-
 @media (max-width: 768px) {
   .slick-prev,
   .slick-next {
@@ -55,10 +54,19 @@
   }
 
   .SliderStyles {
-    width: 100%;
+    width: 300px !important; /* ocupa casi todo el ancho del móvil */
+    height: 200px !important;
+    margin: 0 auto; /* centrado */
+    height: auto;
+    padding: 25px 15px;
+    font-size: 0.95rem;
   }
 
   .slick-slide {
-    padding: 0 10px; /* un poco menos de espacio en móvil */
+    padding: 0 180px; /* menos espacio lateral */
   }
-}
+
+  .SliderContainer h2 {
+    font-size: 1.5rem; 
+     }
+  }
