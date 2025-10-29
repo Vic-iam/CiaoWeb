@@ -9,7 +9,6 @@ import { FaChevronRight, FaInstagram, FaTiktok, FaFacebook } from "react-icons/f
 import Cejas from "../assets/eyes-407382_1280.jpg"
 import Legs from "../assets/hermosas-piernas.jpg"
 import Manic from "../assets/cosmetic-1471346_1280.jpg"
-import Carousel from "../components/Carousel"
 
 function Home() {
 
@@ -150,7 +149,6 @@ function Home() {
             </div>
 
 
-            <Carousel />
 
 
 
