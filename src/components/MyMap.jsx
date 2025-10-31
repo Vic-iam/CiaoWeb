@@ -19,7 +19,6 @@ function MyMap() {
   return (
     <div className={style.mapWrapper}>
       <MapContainer center={position} zoom={15} scrollWheelZoom={true} className={style.leafletContainer}>
-        {/* Mapa estilo oscuro */}
         <TileLayer
           url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
           attribution='&copy; <a href="https://carto.com/">CARTO</a>'
@@ -29,7 +28,7 @@ function MyMap() {
           <Popup>
             <div className={style.popupContent}>
               <p><strong>Estamos aquí 📍</strong></p>
-              <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer" className={style.directionsBtn}>
+              <a style={{color: "white"}} href={googleMapsUrl} target="_blank" rel="noopener noreferrer" className={style.directionsBtn}>
                 Cómo llegar 🚗
               </a>
             </div>
