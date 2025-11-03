@@ -28,7 +28,7 @@ function MyMap() {
           <Popup>
             <div className={style.popupContent}>
               <p><strong>Estamos aquí 📍</strong></p>
-              <a style={{color: "white"}} href={googleMapsUrl} target="_blank" rel="noopener noreferrer" className={style.directionsBtn}>
+              <a style={{color: "white"} } href={googleMapsUrl} target="_blank" rel="noopener noreferrer" className={style.directionsBtn}>
                 Cómo llegar 🚗
               </a>
             </div>
