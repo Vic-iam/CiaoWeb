@@ -30,6 +30,9 @@
     font-size: 1.4rem;
 }
 
+.itemToggle{
+    display: none;
+}
 
 .titleStyle {
     display: flex;
@@ -45,10 +48,6 @@
 
 .titleStyle h1 {
     font-size: 4rem;
-}
-
-.itemToggle {
-    display: none;
 }
 
 .titleToggle{
