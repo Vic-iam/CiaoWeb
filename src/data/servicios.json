@@ -1,6 +1,87 @@
 [
     {
         "id": 1,
+        "nombre": "Manicuras",
+        "opciones": [
+            "Cambio de esmalte semipermanete french en manos",
+            "Manicura esmaltado semipermanente frech",
+            "Retiro + manicura esmaltado comun",
+            "Retiro + manicura esmaltado semipermanente",
+            "Retiro + manicura semipermanente french",
+            "Retiro + manicura sin esmaltado",
+            "Service de esculpidas en polygel"
+        ]
+    },
+    {
+        "id": 2,
+        "nombre": "Uñas",
+        "opciones": [
+            "Baby boomer en semipermanente",
+            "Cambio de esmalte comun en manos",
+            "Cambio de esmalte semipermanete en manos",
+            "Corte y limado de uñas en manos",
+            "French",
+            "Manicura esmaltado comun",
+            "Manicura esmaltado semipermanente",
+            "Manicura sin esmaltado",
+            "Pack nail art en todas",
+            "Parche (reparacion de uña rota)"
+        ]
+    },
+    {
+        "id": 3,
+        "nombre": "Uñas acrilicas",
+        "opciones": [
+            "Service de esculpidas en acrilico + esmalte semipermanente",
+            "Uñas esculpidas en acrilico",
+            "Uñas esculpidas en acrilico + esmalte semipermanente"
+        ]
+    },
+    {
+        "id": 4,
+        "nombre": "Uñas en gel",
+        "opciones": [
+            "Service de esculpidas en gel + esmalte semipermanente",
+            "Uñas esculpidas en gel + esmalte semipermanente"
+        ]
+    },
+    {
+        "id": 5,
+        "nombre": "Uñas esculpidas",
+        "opciones": [
+            "Uña esculpida individual en polygel",
+            "Uñas esculpidas en polygel + esmalte semipermanente"
+        ]
+    },
+    {
+        "id": 6,
+        "nombre": "Kappings",
+        "opciones": [
+            "Kapping base soak off + esmalte semipermanente",
+            "Kapping gel de construccion + esmalte semipermanente",
+            "Kapping polygel + esmalte semipermanente"
+        ]
+    },
+    {
+        "id": 7,
+        "nombre": "Soft gel",
+        "opciones": [
+            "Soft gel + esmaltado semipermanente"
+        ]
+    },
+    {
+        "id": 8,
+        "nombre": "Retiros",
+        "opciones": [
+            "Retiro de acrilico/gel/polygel",
+            "Retiro de esmalte semipermanente definitivo en manos",
+            "Retiro de esmalte semipermanente definito en pies",
+            "Retiro de kapping base soak off gel",
+            "Retiro de soft gel"
+        ]
+    },
+    {
+        "id": 9,
         "nombre": "Bellezas de pies",
         "opciones": [
             "Bellezas de pies esmaltado común",
@@ -15,7 +96,21 @@
         ]
     },
     {
-        "id": 2,
+        "id": 10,
+        "nombre": "Pedicuras",
+        "opciones": [
+            "Pedicuria esmaltado semipermanente french",
+            "Pedicuria esmalte comun",
+            "Pedicuria esmalte semipermanente",
+            "Pedicuria sin esmalte",
+            "Retiro + pedicuria esmaltado comun",
+            "Retiro + pedicuria esmaltado semipermanente",
+            "Retiro + pedicuria esmaltado semipermanente french",
+            "Retiro + pedicuria sin esmaltado"
+        ]
+    },
+    {
+        "id": 11,
         "nombre": "Cejas",
         "opciones": [
             "Diseño + perfilado + henna",
@@ -26,14 +121,33 @@
         ]
     },
     {
-        "id": 3,
+        "id": 12,
+        "nombre": "Extensiones de pestañas",
+        "opciones": [
+            "Efecto rimel",
+            "Extensiones clasicas",
+            "Volumen ligth",
+            "Volumen medio"
+        ]
+    },
+    {
+        "id": 13,
+        "nombre": "Liftings de pestañas",
+        "opciones": [
+            "Lifting basico",
+            "Lifting de pestañas + botox + queratina + tinte",
+            "Lifting de pestañas con tinte + nutricion basica"
+        ]
+    },
+    {
+        "id": 14,
         "nombre": "Combo de depilaciones de mujeres",
         "opciones": [
             "Cejas + bozos"
         ]
     },
     {
-        "id": 4,
+        "id": 15,
         "nombre": "Depilaciones con cera",
         "opciones": [
             "Axilas(cera sistema español)",
@@ -70,7 +184,7 @@
         ]
     },
     {
-        "id": 5,
+        "id": 16,
         "nombre": "Depilaciones definitivas",
         "opciones": [
             "Bozo + menton",
@@ -83,7 +197,7 @@
         ]
     },
     {
-        "id": 6,
+        "id": 17,
         "nombre": "Drenajes",
         "opciones": [
             "Drenaje linfatico manual corporal",
@@ -91,35 +205,7 @@
         ]
     },
     {
-        "id": 7,
-        "nombre": "Extensiones de pestañas",
-        "opciones": [
-            "Efecto rimel",
-            "Extensiones clasicas",
-            "Volumen ligth",
-            "Volumen medio"
-        ]
-    },
-    {
-        "id": 8,
-        "nombre": "Kappings",
-        "opciones": [
-            "Kapping base soak off + esmalte semipermanente",
-            "Kapping gel de construccion + esmalte semipermanente",
-            "Kapping polygel + esmalte semipermanente"
-        ]
-    },
-    {
-        "id": 9,
-        "nombre": "Liftings de pestañas",
-        "opciones": [
-            "Lifting basico",
-            "Lifting de pestañas + botox + queratina + tinte",
-            "Lifting de pestañas con tinte + nutricion basica"
-        ]
-    },
-    {
-        "id": 10,
+        "id": 18,
         "nombre": "Limpiezas de cutis",
         "opciones": [
             "ratacion de labios",
@@ -128,146 +214,60 @@
         ]
     },
     {
-        "id": 11,
+        "id": 19,
         "nombre": "Limpiezas de espalda",
         "opciones": [
             "Higiene de espalda"
         ]
     },
     {
-        "id": 12,
+        "id": 20,
         "nombre": "Limpiezas faciales",
         "opciones": [
             "Peeling facial"
         ]
     },
     {
-        "id": 13,
-        "nombre": "Manicuras",
-        "opciones": [
-            "Cambio de esmalte semipermanete french en manos",
-            "Manicura esmaltado semipermanente frech",
-            "Retiro + manicura esmaltado comun",
-            "Retiro + manicura esmaltado semipermanente",
-            "Retiro + manicura semipermanente french",
-            "Retiro + manicura sin esmaltado",
-            "Service de esculpidas en polygel"
-        ]
-    },
-    {
-        "id": 14,
+        "id": 21,
         "nombre": "Masajes corporales",
         "opciones": [
             "Masaje corporal"
         ]
     },
     {
-        "id": 15,
+        "id": 22,
         "nombre": "Masajes y aparatologias",
         "opciones": [
             "Masaje capilar con ultrason"
         ]
     },
     {
-        "id": 16,
-        "nombre": "Pedicuras",
-        "opciones": [
-            "Pedicuria esmaltado semipermanente french",
-            "Pedicuria esmalte comun",
-            "Pedicuria esmalte semipermanente",
-            "Pedicuria sin esmalte",
-            "Retiro + pedicuria esmaltado comun",
-            "Retiro + pedicuria esmaltado semipermanente",
-            "Retiro + pedicuria esmaltado semipermanente french",
-            "Retiro + pedicuria sin esmaltado"
-        ]
-    },
-    {
-        "id": 17,
+        "id": 23,
         "nombre": "Reflexologias",
         "opciones": [
             "Reflexologia"
         ]
     },
     {
-        "id": 18,
-        "nombre": "Retiros",
-        "opciones": [
-            "Retiro de acrilico/gel/polygel",
-            "Retiro de esmalte semipermanente definitivo en manos",
-            "Retiro de esmalte semipermanente definito en pies",
-            "Retiro de kapping base soak off gel",
-            "Retiro de soft gel"
-        ]
-    },
-    {
-        "id": 19,
-        "nombre": "Soft gel",
-        "opciones": [
-            "Soft gel + esmaltado semipermanente"
-        ]
-    },
-    {
-        "id": 20,
+        "id": 24,
         "nombre": "Tratamientos antiage",
         "opciones": [
             "Tratamiento de blaqueamiento de parpados e hidratacion de ojeras"
         ]
     },
     {
-        "id": 21,
+        "id": 25,
         "nombre": "Tratamientos faciales avanzado",
         "opciones": [
             "Tratamiento facial para acne o rosacea + drenaje linfatico"
         ]
     },
     {
-        "id": 22,
+        "id": 26,
         "nombre": "Tratamientos corporales",
         "opciones": [
             "Pulido corporal + crema u oleo hidratante",
             "pulido corporal + emplasto de algas"
-        ]
-    },
-    {
-        "id": 23,
-        "nombre": "Uñas",
-        "opciones": [
-            "Baby boomer en semipermanente",
-            "Cambio de esmalte comun en manos",
-            "Cambio de esmalte semipermanete en manos",
-            "Corte y limado de uñas en manos",
-            "Frecn",
-            "Manicura esmaltado comun",
-            "Manicura esmaltado semipermanente",
-            "Manicura sin esmaltado",
-            "Pack nail art en todas",
-            "Parche (reparacion de uña rota)"
-        ]
-    },
-    {
-        "id": 24,
-        "nombre": "Uñas acrilicas",
-        "opciones": [
-            "Service de esculpidas en acrilico + esmalte semipermanente",
-            "Uñas esculpidas en acrilico",
-            "Uñas esculpidas en acrilico + esmalte semipermanente"
-        ]
-    },
-    {
-        "id": 25,
-        "nombre": "Uñas en gel",
-        "opciones": [
-            "Service de esculpidas en gel + esmalte semipermanente",
-            "Uñas esculpidas en gel + esmalte semipermanente"
-        ]
-    },
-    {
-        "id": 26,
-        "nombre": "Uñas esculpidas",
-        "opciones": [
-            "Uña esculpida individual en polygel",
-            "Uñas esculpidas en polygel + esmalte semipermanente"
         ]
     }
 ]

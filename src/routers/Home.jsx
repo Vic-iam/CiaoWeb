@@ -6,9 +6,10 @@ import DarkVeil from "../components/Darkveil"
 import Orb from "../components/Orb"
 import { Link } from "react-router-dom"
 import { FaChevronRight, FaInstagram, FaTiktok, FaFacebook } from "react-icons/fa"
-import Cejas from "../assets/eyes-407382_1280.jpg"
+import Cejas from "../assets/cejas.png"
 import Legs from "../assets/hermosas-piernas.jpg"
-import Manic from "../assets/cosmetic-1471346_1280.jpg"
+import Manic from "../assets/manicure_pedicure.jpg"
+import limpiezaFacial from "../assets/limpieza_facial.jpg"
 
 function Home() {
 
@@ -16,8 +17,13 @@ function Home() {
 
     const serviciosHome = [
         {
+            img: Manic,
+            titulo: "Manicura y pedicuria",
+            desc: "Cada uña es una pequeña ventana a tu creatividad",
+        },
+        {
             img: Cejas,
-            titulo: "Cejas",
+            titulo: "Cejas y pestaña",
             desc: "Transforma tu estilo con cejas perfectamente diseñadas",
         },
         {
@@ -26,10 +32,10 @@ function Home() {
             desc: "La vida no es perfecta, pero tu piel puede serlo",
         },
         {
-            img: Manic,
-            titulo: "Manicura",
-            desc: "Cada uña es una pequeña ventana a tu creatividad",
-        },
+            img: limpiezaFacial,
+            titulo: "Limpieza facial",
+            desc: "lorem"
+        }
     ]
 
     return (
@@ -74,8 +80,7 @@ function Home() {
                             <div className={style.image}>
                                 <img src={s.img} alt={s.titulo} />
                             </div>
-                            <h2>{s.titulo}</h2>
-                            <p>"{s.desc}"</p>
+                            <h1> {s.titulo} </h1>
                         </div>
                     ))}
                 </div>
