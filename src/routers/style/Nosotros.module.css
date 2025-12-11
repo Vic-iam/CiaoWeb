@@ -83,7 +83,7 @@ body {
 /* Sección destacada */
 .diferente {
     margin-top: 40px;
-    background: white;
+    background: rgb(255, 255, 255);
     padding: 25px;
     border-radius: 12px;
 }
