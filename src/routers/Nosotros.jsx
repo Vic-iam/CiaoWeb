@@ -1,6 +1,10 @@
 import React from 'react';
 import style from "./style/Nosotros.module.css";
 import SplitText from "../components/SplitText";
+import { FaStar, FaHeart   } from "react-icons/fa"
+import { LuLeafyGreen } from "react-icons/lu";
+import { GiLipstick } from "react-icons/gi";
+
 import Orb from "../components/Orb";
 
 function Nosotros() {
@@ -62,10 +66,10 @@ function Nosotros() {
                     <div className={style.diferente}>
                         <div className={style.titleTextDiferente}>¿Qué nos hace diferentes?</div>
                         <ul className={style.emojis}>
-                            <li>🤍 Atención cercana y personalizada</li>
-                            <li>💄 Amplia variedad de tratamientos para rostro, cuerpo, manos y pies.</li>
-                            <li>🌿 Productos profesionales de máxima calidad.</li>
-                            <li>✨ Un ambiente cálido donde te vas sintiendo mejor de lo que llegaste.</li>
+                            <li><FaHeart /> Atención cercana y personalizada</li>
+                            <li><GiLipstick /> Amplia variedad de tratamientos para rostro, cuerpo, manos y pies.</li>
+                            <li><LuLeafyGreen /> Productos profesionales de máxima calidad.</li>
+                            <li><FaStar /> Un ambiente cálido donde te vas sintiendo mejor de lo que llegaste.</li>
                         </ul>
                     </div>
                 </div>

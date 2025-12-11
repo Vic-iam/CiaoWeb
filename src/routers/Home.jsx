@@ -5,7 +5,8 @@ import SplitText from "../components/SplitText"
 import DarkVeil from "../components/Darkveil"
 import Orb from "../components/Orb"
 import { Link } from "react-router-dom"
-import { FaChevronRight, FaInstagram, FaTiktok, FaFacebook } from "react-icons/fa"
+import { FaChevronRight, FaInstagram, FaTiktok, FaFacebook, FaStar, FaHeart   } from "react-icons/fa"
+import { LuLeafyGreen } from "react-icons/lu";
 import Cejas from "../assets/cejas.png"
 import Legs from "../assets/hermosas-piernas.jpg"
 import Manic from "../assets/manicure_pedicure.jpg"
@@ -56,7 +57,11 @@ function Home() {
                 />
 
                 <SplitText
-                    text="¡Ciao bella! Despierta tu belleza interior en un lugar dedicado a ti.✨"
+                    text={
+                        <>
+                            ¡Ciao bella! Despierta tu belleza interior en un lugar dedicado a ti.
+                        </>
+                    }
                     className={style.content}
                     delay={30}
                     duration={0.6}
@@ -97,15 +102,15 @@ function Home() {
                 <h2>Nuestros valores</h2>
                 <div className={style.valoresContainer}>
                     <div className={style.card1}>
-                        <h3>✨ Cuidado personalizado</h3>
+                        <h3><FaStar/> Cuidado personalizado</h3>
                         <p>Cada tratamiento está pensado para resaltar tu belleza única.</p>
                     </div>
                     <div className={style.card2}>
-                        <h3>🌿 Productos de calidad</h3>
+                        <h3><LuLeafyGreen /> Productos de calidad</h3>
                         <p>Usamos insumos profesionales y amigables con la piel.</p>
                     </div>
                     <div className={style.card3}>
-                        <h3>💖 Espacio de bienestar</h3>
+                        <h3><FaHeart /> Espacio de bienestar</h3>
                         <p>Relajate, desconectá y recargá energía en un ambiente tranquilo.</p>
                     </div>
                 </div>
