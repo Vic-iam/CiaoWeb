@@ -18,6 +18,7 @@ const toggleServicio = (id) => {
 
     // Si el mismo está abierto → cerrar todo
     if (openIds.includes(id)) {
+        
         setOpenIds([]);
         return;
     }
