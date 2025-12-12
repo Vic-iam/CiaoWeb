@@ -9,9 +9,9 @@
 }
 
 .col {
-  flex: 1;
-  min-width: 200px;
   margin: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .col h3 {
@@ -23,6 +23,7 @@
 .col a {
   color: #ddd;
   font-size: 1rem;
+  display: flex;
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -36,5 +37,12 @@
   text-align: center;
   padding: 10px;
   color: #aaa;
-  font-size: 1srem;
+  font-size: 1rem;
+}
+
+@media (max-width: 760px) {
+  .footerColumns{
+    display: flex;
+    flex-direction: column;
+  }
 }
