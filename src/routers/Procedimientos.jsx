@@ -1,7 +1,7 @@
 import { useState, useRef, useMemo } from 'react';
 import style from "./style/Procedimientos.module.css";
 import { FaChevronRight, FaWhatsapp } from "react-icons/fa";
-import servicios from "../Data/Servicios.json";
+import servicios from "../data/Servicios.json";
 import SplitText from "../components/SplitText";
 
 function Procedimientos() {
