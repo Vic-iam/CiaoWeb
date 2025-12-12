@@ -52,7 +52,7 @@
 }
 
 .containerProc h1 {
-  font-size: 2rem;
+  font-size: 1.4rem;
 }
 
 .containerDescription {
@@ -67,7 +67,6 @@
   height: 100%;
   width: 100%;
   border-radius: 5px;
-  box-shadow: 0 2px 4px silver;
 }
 
 .image {
@@ -90,7 +89,7 @@
 }
 
 .description h2 {
-  font-size: 2rem;
+  font-size: 1.4rem;
 }
 
 .description p {
@@ -134,44 +133,13 @@
   color: var(--hover);
 }
 
-.btnWhatsAppFloat {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: 15px 20px;
-  font-size: 2.5rem;
-  border: none;
-  border-radius: 50px;
-  background-color: var(--color-btn-whatsapp);
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: var(--shadow);
-  z-index: 1;
-  transition: transform 0.2s;
-}
 
-.btnWhatsAppFloat:hover {
-  transform: scale(1.05);
-}
+
 
 /* =========================
    TOAST / ALERTAS
 ========================= */
 
-.toast {
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  background-color: var(--color-toast-bg);
-  color: #fff;
-  padding: 12px 20px;
-  border-radius: 10px;
-  font-weight: bold;
-  box-shadow: var(--shadow);
-  z-index: 1;
-  animation: slideIn 0.3s, fadeOut 0.3s 2.7s forwards;
-}
 
 .valoresSection {
   display: flex;
