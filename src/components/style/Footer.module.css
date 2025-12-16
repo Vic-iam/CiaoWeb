@@ -1,11 +1,27 @@
 .footerColumns {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   background-color: #290245;
   color: #eee;
   padding: 30px 15px;
   z-index: 2;
+}
+
+.titleStyle {
+    display: flex;
+    margin: 15px;
+    align-items: center;
+    color: white;
+}
+
+.titleStyle span {
+    font-size: 2.4rem;
+    color: pink;
+}
+
+.titleStyle h1 {
+    font-size: 2.4rem;
 }
 
 .col {
