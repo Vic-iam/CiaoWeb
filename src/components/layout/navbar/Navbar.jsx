@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import style from "./Navbar.module.css";
 import { NavLink } from "react-router-dom";
 import { FaTimes, FaBars } from "react-icons/fa";
+import DarkMode from "../../ui/darkmode/DarkMode";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -98,6 +99,8 @@ const activeClass = ({ isActive }) =>
                 Reservar cita
               </NavLink>
             </li>
+
+            <DarkMode />
           </ul>
         </div>
 

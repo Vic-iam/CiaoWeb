@@ -14,8 +14,8 @@ function Home() {
 
         <div className={style.homeBody}>
 
-            <div>
-                
+            <div className={style.presentation}>
+
             </div>
 
 

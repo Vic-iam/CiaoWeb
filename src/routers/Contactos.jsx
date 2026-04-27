@@ -1,5 +1,5 @@
 import React from 'react';
-import MyMap from '../components/MyMap';
+import MyMap from '../components/ui/mymap/MyMap';
 import style from "./style/Contacto.module.css";
 
 function Contactos() {
