@@ -1,17 +1,17 @@
 .footerColumns {
   display: flex;
-  justify-content: space-between;
+  justify-content:space-around;
   flex-wrap: wrap;
   background: var(--bg);
   color: var(--text);
   padding: 30px 15px;
+  border: 1px solid var(--border);
   z-index: 2;
 }
 
 .titleStyle {
     display: flex;
-    margin: 15px;
-    align-items: center;
+    margin: 1px;
 }
 
 .titleStyle span {
@@ -39,10 +39,11 @@
   display: flex;
   text-decoration: none;
   transition: color 0.3s;
+  color: var(--text);
 }
 
 .col a:hover {
-  color: purple;
+  color: var(--primary);
 }
 
 .copy {

@@ -1,4 +1,4 @@
-import { useState, useRef, useMemo } from "react";
+import { useState, useRef } from "react";
 import style from "./style/Procedimientos.module.css";
 import { FaChevronRight, FaWhatsapp } from "react-icons/fa";
 import servicios from "../data/Servicios.json";
@@ -19,27 +19,16 @@ function Procedimientos() {
       return;
     }
 
-    if (openIds.length > 0) {
-      setOpenIds([]);
-      setTimeout(() => abrirYDesplazar(id, elemento), 150);
-    } else {
-      abrirYDesplazar(id, elemento);
-    }
-  };
-
-  const abrirYDesplazar = (id, elemento) => {
     setOpenIds([id]);
 
-    const esMovil = window.innerWidth <= 768;
-    const menuAltura = menuRef.current?.offsetHeight || 0;
-    const offsetExtra = esMovil ? 160 : 80;
-
     setTimeout(() => {
+      const menuAltura = menuRef.current?.offsetHeight || 0;
       const posicion =
         elemento.getBoundingClientRect().top +
         window.scrollY -
         menuAltura -
-        offsetExtra;
+        100;
+
       window.scrollTo({
         top: posicion,
         behavior: "smooth",
@@ -48,25 +37,25 @@ function Procedimientos() {
   };
 
   const toggleSeleccion = (opcion) => {
-    if (seleccionados.includes(opcion)) {
-      setSeleccionados(seleccionados.filter((item) => item !== opcion));
-    } else {
-      setSeleccionados([...seleccionados, opcion]);
-    }
-  };
-
-  const mostrarAlerta = (mensaje) => {
-    setAlerta(mensaje);
-    setTimeout(() => setAlerta(null), 3000);
+    setSeleccionados((prev) =>
+      prev.includes(opcion)
+        ? prev.filter((item) => item !== opcion)
+        : [...prev, opcion]
+    );
   };
 
   const enviarWhatsApp = () => {
-    if (seleccionados.length === 0)
-      return mostrarAlerta("Selecciona al menos un servicio");
+    if (seleccionados.length === 0) {
+      setAlerta("Selecciona al menos un servicio");
+      setTimeout(() => setAlerta(null), 3000);
+      return;
+    }
+
     const numero = "5491123924974";
     const mensaje = encodeURIComponent(
-      `Hola, quiero pedir turno para: ${seleccionados.join(", ")}`,
+      `Hola, quiero pedir turno para: ${seleccionados.join(", ")}`
     );
+
     window.open(`https://wa.me/${numero}?text=${mensaje}`, "_blank");
   };
 
@@ -79,62 +68,70 @@ function Procedimientos() {
     }
   };
 
-  const handleAnimationComplete = () => {};
-
   return (
-    <div className={style.serviciosBody}>
-      <div className={style.serviciosContainer}>
-        <div className={style.menuWrapper}>
-          <button className={style.scrollBtn} onClick={() => scroll("left")}>
-            ◀
-          </button>
+    <section className={style.serviciosBody}>
+      
+      {/* MENÚ SUPERIOR */}
+      <div className={style.menuWrapper}>
+        <button className={style.scrollBtn} onClick={() => scroll("left")}>
+          ◀
+        </button>
 
-          <div className={style.menuItemContainer} ref={menuRef}>
-            {servicios.map((item) => (
-              <span
-                key={item.id}
-                className={style.menuLink}
-                onClick={() => toggleServicio(item.id)}
-              >
-                {item.nombre}
-              </span>
-            ))}
-          </div>
-
-          <button className={style.scrollBtn} onClick={() => scroll("right")}>
-            ▶
-          </button>
+        <div className={style.menuItemContainer} ref={menuRef}>
+          {servicios.map((item) => (
+            <button
+              key={item.id}
+              className={style.menuLink}
+              onClick={() => toggleServicio(item.id)}
+            >
+              {item.nombre}
+            </button>
+          ))}
         </div>
 
+        <button className={style.scrollBtn} onClick={() => scroll("right")}>
+          ▶
+        </button>
+      </div>
 
+      {/* SERVICIOS */}
+      <div className={style.serviciosContainer}>
         {servicios.map((servicio) => (
           <div
             key={servicio.id}
-            className={style.styleServis}
+            className={style.servicioCard}
             id={`servicio-${servicio.id}`}
           >
             <div
               className={style.servicioHeader}
               onClick={() => toggleServicio(servicio.id)}
             >
-              <h3 className={style.styleNombre}>{servicio.nombre}</h3>
+              <h3>{servicio.nombre}</h3>
+
               <FaChevronRight
-                className={`${style.iconArrow} ${openIds.includes(servicio.id) ? style.open : ""}`}
+                className={`${style.iconArrow} ${
+                  openIds.includes(servicio.id) ? style.open : ""
+                }`}
               />
             </div>
 
             <div
-              className={`${style.content} ${openIds.includes(servicio.id) ? style.openContent : ""}`}
+              className={`${style.content} ${
+                openIds.includes(servicio.id) ? style.openContent : ""
+              }`}
             >
-              <ul>
-                <h2 className={style.contentTitle}>Elige un servicio:</h2>
-                {servicio.opciones.map((otp, index) => (
+              <h2 className={style.contentTitle}>Elegí un servicio:</h2>
+
+              <ul className={style.optionsList}>
+                {servicio.opciones.map((opcion, index) => (
                   <li
                     key={index}
-                    className={`${style.styleOptions} ${seleccionados.includes(otp) ? style.selectedOption : ""}`}
-                    onClick={() => toggleSeleccion(otp)}
+                    className={`${style.optionItem} ${
+                      seleccionados.includes(opcion) ? style.selectedOption : ""
+                    }`}
+                    onClick={() => toggleSeleccion(opcion)}
                   >
-                    <span>{otp}</span>
+                    {opcion}
                   </li>
                 ))}
               </ul>
@@ -143,12 +140,14 @@ function Procedimientos() {
         ))}
       </div>
 
+      {/* BOTÓN WHATSAPP */}
       <button onClick={enviarWhatsApp} className={style.btnWhatsAppFloat}>
         <FaWhatsapp />
       </button>
 
+      {/* ALERTA */}
       {alerta && <div className={style.toast}>{alerta}</div>}
-    </div>
+    </section>
   );
 }
 

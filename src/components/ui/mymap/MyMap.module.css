@@ -1,40 +1,47 @@
 .mapWrapper {
   width: 100%;
-  max-width: 900px;
-  height: 400px;
+  max-width: 1000px;
+  height: 450px;
   margin: 20px auto;
-  border-radius: 12px;
+
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
-  z-index: 3;
+
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
 }
 
 .leafletContainer {
   width: 100%;
   height: 100%;
-  z-index: 2;
 }
 
-/* Popup estilos */
 .popupContent {
   text-align: center;
+  padding: 8px;
 }
 
-.popupContent a{
-    color: white;
+.popupContent p {
+  margin-bottom: 10px;
+  color: var(--text);
+  font-size: 0.95rem;
 }
 
 .directionsBtn {
   display: inline-block;
-  margin-top: 5px;
-  padding: 6px 12px;
-  background-color: #6a0dad;
+  padding: 8px 14px;
+
+  background: var(--primary);
+  color: white;
   text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: background 0.2s;
+
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+
+  transition: all 0.3s ease;
 }
 
 .directionsBtn:hover {
-  background-color: #520a9e;
+  background: var(--primary-hover);
+  transform: translateY(-2px);
 }

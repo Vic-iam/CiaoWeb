@@ -1,0 +1,197 @@
+.reveal {
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+.fadeUp {
+  transform: translateY(30px);
+}
+
+.fadeLeft {
+  transform: translateX(-30px);
+}
+
+.fadeRight {
+  transform: translateX(30px);
+}
+
+.reveal:global(.show) {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 85vh;
+}
+
+.heroIndex{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--shadow-lg);
+  padding: 15px 15px;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  color: var(--text);
+  text-align: center;
+}
+
+.hero p {
+  color: var(--text-secondary);
+  margin: 15px 0;
+  text-align: center;
+  max-width: 500px;
+  font-size: 1rem;
+}
+
+.heroButtons{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btnPrimary {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: var(--text);
+  background: var(--primary);
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  transition: color 0.3s ease;
+}
+
+.btnPrimary:hover{
+  color: var(--text-inverse);
+}
+
+
+.btnSecondary {
+  text-decoration: none;
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  transition: color 0.3s ease;
+}
+
+.btnSecondary:hover{
+  color: var(--primary);
+}
+
+.reveal{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--text);
+}
+
+.reveal h2{
+  font-size: 2.6rem;
+  text-align: center;
+
+}
+
+.cards{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 120px;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  padding: 10px;
+}
+
+.card h3{
+  font-size: 1.4rem;
+}
+
+.card p{
+  color: var(--text-secondary);
+}
+
+.benefits{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  background: var(--surface);
+  padding: 120px;
+}
+
+.benefits h3{
+  font-size: 2.6rem;
+  text-align: center;
+}
+
+.benefitList{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.benefitList p{
+  color: var(--text-secondary);
+}
+
+.testimonials{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 120px;
+}
+
+@media (max-width: 768px) {
+
+  .heroIndex{
+    padding: 30px
+  }
+
+  .hero h1,
+  .reveal h2,
+  .benefits h3{
+    font-size: 1.3rem;
+    text-align: center;
+    width: 300px;
+  }
+  .hero p{
+    font-size: 0.9rem;
+  }
+
+  .btnPrimary,
+  .btnSecondary{
+    display: flex;
+  }
+
+  .card h3{
+    font-size: 1.1rem;
+  }
+
+  .benefitList{
+    width: 350px;
+  }
+
+}

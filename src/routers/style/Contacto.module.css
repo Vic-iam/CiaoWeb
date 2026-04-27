@@ -1,127 +1,89 @@
 
-/* Contenedor principal */
 .contactoContainer {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-    font-family: 'Poppins', sans-serif;
-    color: white;
-    padding-top: 70px;
-    gap: 20px;
-    overflow: hidden;
+  padding: 120px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: var(--text);
 }
 
-/* Orb de fondo */
-.orbBackground {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 600px;
-    height: 600px;
-    transform: translate(-50%, -50%);
-    z-index: 0;
-    opacity: 10;
-    filter: blur(30px);
+
+.header {
+  text-align: center;
+  margin-bottom: 70px;
 }
 
-/* Contenido encima del orb */
-.content {
-    position: relative;
-    z-index: 1;
+.header h1 {
+  font-size: 2.6rem;
+  margin-bottom: 20px;
 }
 
-.titleContacto {
-    font-size: 3rem;
+.header p {
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: var(--text-secondary);
 }
 
-.contactoText {
-    margin: 10px auto;
-    max-width: 600px;
-    padding: 20px;
-    font-size: 1.4rem;
-}
 
-/* Tarjetas */
+
 .cardContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
 }
 
-.card1, .card2, .card3 {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 20px 20px;
-    width: 250px;
-    height: 400px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 30px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
 }
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.card h2 {
+  color: var(--primary);
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.card p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
 
 .horarioLista {
   display: grid;
-  grid-template-columns: 120px auto; /* primera columna para los días */
-  gap: 6px 15px;                     /* espacio entre filas y columnas */
-  margin-top: 10px;
-  text-align: left;
-  font-size: 1.1rem;
+  grid-template-columns: 1fr auto;
+  gap: 8px 15px;
+  color: var(--text-secondary);
 }
 
-.card1 { background-color: #333; }
-.card2 { background-color: #290245; }
-.card3 { background-color: #333; }
 
-
-
-.card1:hover, .card2:hover, .card3:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+.mapSection {
+  margin-top: 60px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
 }
 
-/* Mapa */
-.mapContainer {
-    margin-top: 50px;
-    z-index: 2;
-}
 
-/* Responsivo */
-@media (max-width: 760px) {
-    .contactoContainer {
-        padding-top: 150px;
-    }
+@media (max-width: 768px) {
+  .contactoContainer {
+    padding: 90px 15px;
+  }
 
-    .orbBackground {
-        width: 400px;
-        height: 400px;
-        filter: blur(20px);
-    }
+  .header h1 {
+    font-size: 2.2rem;
+  }
 
-    .cardContainer {
-        gap: 10px;
-    }
-
-    .contactoText{
-        font-size: 1rem;
-    }
-
-    .card1, .card2, .card3 {
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
-        gap: 10px;
-        height: 250px;
-        width: 400px;
-        font-size: 1rem;
-    }
-
-  .horarioLista {
-    grid-template-columns: 100px auto;
-    gap: 4px 10px;
-    font-size: 0.9rem;
+  .card {
+    padding: 20px;
   }
 }

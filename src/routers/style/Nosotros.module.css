@@ -1,114 +1,166 @@
+.reveal {
+  opacity: 0;
+  transition: all 0.8s ease;
+}
 
+.fadeUp {
+  transform: translateY(30px);
+}
 
-/* Contenedor general */
+.fadeLeft {
+  transform: translateX(-30px);
+}
+
+.fadeRight {
+  transform: translateX(30px);
+}
+
+.reveal:global(.show) {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
 .nosotrosContainer {
-    position: relative;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 60px 20px;
-    color: #ffffff;
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.7;
-    overflow: hidden;
+  padding: 140px 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: var(--text);
 }
 
-/* Orb de fondo */
-.orbBackground {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 600px;
-    height: 600px;
-    transform: translate(-50%, -50%);
-    z-index: 0;
-    opacity: 10; /* lo hace más sutil */
-    filter: blur(30px);
+
+.header {
+  text-align: center;
+  margin-bottom: 80px;
 }
 
-/* Contenido encima del orb */
-.content {
-    position: relative;
-    z-index: 1;
+.header h1 {
+  font-size: 2.6rem;
+  margin-bottom: 20px;
+  color: var(--text);
 }
 
-/* Título principal */
-.titleNosotros {
-    text-align: center;
-    font-size: 3rem;
-    font-weight: 600;
-    margin-bottom: 40px;
-    position: relative;
+.header p {
+  max-width: 650px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
 }
 
-.titleNosotros::after {
-    content: "";
-    width: 60px;
-    height: 4px;
-    background: #34004d;
-    display: block;
-    margin: 10px auto 0;
-    border-radius: 2px;
+
+
+.section {
+  margin-bottom: 70px;
 }
 
-.nosotrosText {
-    border: 1px solid white;
-    padding: 20px;
-    backdrop-filter: blur(8px);
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 12px;
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--primary);
 }
 
-/* Subtítulos */
-.titleText {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-top: 30px;
-    color: rgb(185, 13, 207);
+.section p {
+  line-height: 1.9;
+  color: var(--text-secondary);
+  margin-bottom: 15px;
+  font-size: 1rem;
 }
 
-.titleTextDiferente{
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: rgb(117, 1, 133);
+/* =========================================
+   GRID MISIÓN / VISIÓN
+========================================= */
+
+.gridSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 70px;
 }
 
-/* Párrafos */
-.nosotrosText p {
-    margin-top: 10px;
-    color: #ffffff;
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 30px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
 }
 
-/* Sección destacada */
-.diferente {
-    margin-top: 40px;
-    background: rgb(255, 255, 255);
-    padding: 25px;
-    border-radius: 12px;
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
 }
 
-/* Lista con emojis */
-.emojis {
-    list-style: none;
-    padding: 0;
-    margin-top: 15px;
+.card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: var(--primary);
 }
 
-.emojis li {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin: 8px 0;
-    font-size: 1.1rem;
-    color: black;
+.card p {
+  line-height: 1.8;
+  color: var(--text-secondary);
 }
 
-@media (max-width: 760px) {
-    .titleNosotros {
-        padding-top: 80px;
-    }
-    .orbBackground {
-        width: 400px;
-        height: 400px;
-        filter: blur(20px);
-    }
+/* =========================================
+   LISTA DE DIFERENCIALES
+========================================= */
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin-top: 25px;
+  display: grid;
+  gap: 18px;
+}
+
+.features li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.features li:hover {
+  transform: translateX(6px);
+  box-shadow: var(--shadow-md);
+}
+
+.icon {
+  color: var(--primary);
+  font-size: 1.2rem;
+  min-width: 20px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+  .nosotrosContainer {
+    padding: 90px 15px;
+  }
+
+  .header h1 {
+    font-size: 2.2rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+
+  .section h2,
+  .card h2 {
+    font-size: 1.5rem;
+  }
+
+  .features li {
+    align-items: flex-start;
+    font-size: 0.95rem;
+  }
 }
