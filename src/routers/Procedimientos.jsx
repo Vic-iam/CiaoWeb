@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import style from "./style/Procedimientos.module.css";
 import { FaChevronRight, FaWhatsapp } from "react-icons/fa";
-import servicios from "../data/Servicios.json";
+import servicios from "../data/servicios.json";
 
 function Procedimientos() {
   const [openIds, setOpenIds] = useState([]);

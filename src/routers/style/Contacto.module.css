@@ -1,4 +1,26 @@
 
+.reveal {
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+.fadeUp {
+  transform: translateY(30px);
+}
+
+.fadeLeft {
+  transform: translateX(-30px);
+}
+
+.fadeRight {
+  transform: translateX(30px);
+}
+
+.reveal:global(.show) {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
 .contactoContainer {
   padding: 120px 20px;
   max-width: 1200px;
