@@ -1,162 +1,23 @@
 'use client'
 import { useState } from "react"
 import style from "./style/Home.module.css"
-import SplitText from "../components/SplitText"
-import DarkVeil from "../components/Darkveil"
-import Orb from "../components/Orb"
 import { Link } from "react-router-dom"
 import { FaChevronRight, FaInstagram, FaTiktok, FaFacebook, FaStar, FaHeart   } from "react-icons/fa"
 import { LuLeafyGreen } from "react-icons/lu";
-import Cejas from "../assets/cejas.png"
-import Legs from "../assets/hermosas-piernas.jpg"
-import Manic from "../assets/manicure_pedicure.jpg"
-import limpiezaFacial from "../assets/limpieza_facial.jpg"
 
 function Home() {
 
     const handleAnimationComplete = () => { }
 
-    const serviciosHome = [
-        {
-            img: Manic,
-            titulo: "Manicura y pedicuria",
-            desc: "Cada uña es una pequeña ventana a tu creatividad",
-        },
-        {
-            img: Cejas,
-            titulo: "Cejas y pestaña",
-            desc: "Transforma tu estilo con cejas perfectamente diseñadas",
-        },
-        {
-            img: Legs,
-            titulo: "Depilación",
-            desc: "La vida no es perfecta, pero tu piel puede serlo",
-        },
-        {
-            img: limpiezaFacial,
-            titulo: "Limpieza facial",
-            desc: "lorem"
-        }
-    ]
 
     return (
 
         <div className={style.homeBody}>
 
-            {/* === Inicio === */}
-            <div className={style.appContainer}>
-                <DarkVeil
-                    className={style.darkveilCanvas}
-                    hueShift={280}
-                    noiseIntensity={0.05}
-                    scanlineIntensity={0.1}
-                    scanlineFrequency={4}
-                    warpAmount={0.03}
-                    resolutionScale={1}
-
-                />
-
-                <SplitText
-                    text={
-                        <>
-                            ¡Ciao bella! Despierta tu belleza interior en un lugar dedicado a ti.
-                        </>
-                    }
-                    className={style.content}
-                    delay={30}
-                    duration={0.6}
-                    ease="power3.out"
-                    splitType="chars"
-                    from={{ opacity: 0, y: 40 }}
-                    to={{ opacity: 1, y: 0 }}
-                    threshold={0.1}
-                    rootMargin="-100px"
-                    textAlign="center"
-                    onLetterAnimationComplete={handleAnimationComplete}
-                />
+            <div>
+                
             </div>
 
-            {/* === Sección de servicios === */}
-            <section className={style.containerProc}>
-                <h1>Nuestros servicios</h1>
-                <div className={style.containerDescription}>
-                    {serviciosHome.map((s, i) => (
-                        <div key={i} className={style.description}>
-                            <div className={style.image}>
-                                <img src={s.img} alt={s.titulo} />
-                            </div>
-                            <h1> {s.titulo} </h1>
-                        </div>
-                    ))}
-                </div>
-
-                <div>
-                    <Link to="/procedimientos" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className={`${style.btnBase} ${style.btnPrimary}`}>
-                        Ver servicios
-                    </Link>
-                </div>
-            </section>
-
-
-            <section className={style.valoresSection}>
-                <h2>Nuestros valores</h2>
-                <div className={style.valoresContainer}>
-                    <div className={style.card1}>
-                        <h3><FaStar/> Cuidado personalizado</h3>
-                        <p>Cada tratamiento está pensado para resaltar tu belleza única.</p>
-                    </div>
-                    <div className={style.card2}>
-                        <h3><LuLeafyGreen /> Productos de calidad</h3>
-                        <p>Usamos insumos profesionales y amigables con la piel.</p>
-                    </div>
-                    <div className={style.card3}>
-                        <h3><FaHeart /> Espacio de bienestar</h3>
-                        <p>Relajate, desconectá y recargá energía en un ambiente tranquilo.</p>
-                    </div>
-                </div>
-            </section>
-
-
-            {/* === Orb + info === */}
-            <div className={style.orbContainer}>
-
-                <div className={style.orbBackground}>
-                    <Orb hoverIntensity={0} rotateOnHover={true} hue={282} forceHoverState={false} />
-                </div>
-
-                <section className={style.publContainer}>
-                    <div className={style.publDescription}>
-                        <div className={style.linea}></div>
-                        <h2>Visítanos</h2>
-                        <div className={style.horarios}>
-                            <h3>Horario de trabajo</h3>
-                            <p>Serrano 479, Ciudad Autónoma de Buenos Aires</p>
-                            <p>Lunes-Viernes: 11 a.m - 8 p.m | Sábado: 10 a.m - 8 p.m</p>
-                        </div>
-
-                        <div>
-                            <Link to="/contactos" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className={`${style.btnBase} ${style.verUbicacion}`}>
-                                VER UBICACIÓN <FaChevronRight />
-                            </Link>
-                        </div>
-                        <div className={style.socialLinks}>
-                            <h3>Síguenos en nuestras redes</h3>
-                            <div className={style.icons}>
-                                <a href="https://www.instagram.com/ciaobellaba?igsh=OGw5d29kYnRwMmN6" target="_blank" rel="noopener noreferrer">
-                                    <FaInstagram />
-                                </a>
-                                <a href="https://www.tiktok.com/@ciaobellaestetica7?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer">
-                                    <FaTiktok />
-                                </a>
-                                <a href="https://www.facebook.com/profile.php?id=61582412773854" target="_blank" rel="noopener noreferrer">
-                                    <FaFacebook />
-                                </a>
-                            </div>
-                        </div>
-                        <p style={{ color: "#E1BEE7" }}>"Amarse a uno mismo es el comienzo de un romance para toda la vida"</p>
-                    </div>
-                </section>
-            </div>
 
 
 

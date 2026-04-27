@@ -1,6 +1,6 @@
 import './App.css'
-import Footer from './components/Footer'
-import Navbar from './components/Navbar'
+import Footer from './components/layout/footer/Footer'
+import Navbar from './components/layout/navbar/Navbar'
 import Contactos from './routers/Contactos'
 import Home from './routers/Home'
 import Nosotros from './routers/Nosotros'

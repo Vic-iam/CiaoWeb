@@ -1,8 +1,6 @@
 import React from 'react';
 import MyMap from '../components/MyMap';
 import style from "./style/Contacto.module.css";
-import SplitText from "../components/SplitText";
-import Orb from "../components/Orb";
 
 function Contactos() {
 
@@ -12,28 +10,10 @@ function Contactos() {
         <>
             <div className={style.contactoContainer}>
 
-                {/* Orb de fondo */}
-                <div className={style.orbBackground}>
-                    <Orb hoverIntensity={0} rotateOnHover={true} hue={282} forceHoverState={false} />
-                </div>
 
                 {/* Contenido principal */}
                 <div className={style.content}>
                     <div className={style.titleContacto}>
-                        <SplitText
-                            text="Contactos"
-                            className={style.contentText}
-                            delay={30}
-                            duration={0.6}
-                            ease="power3.out"
-                            splitType="chars"
-                            from={{ opacity: 0, y: 40 }}
-                            to={{ opacity: 1, y: 0 }}
-                            threshold={0.1}
-                            rootMargin="-100px"
-                            textAlign="center"
-                            onLetterAnimationComplete={handleAnimationComplete}
-                        />
                     </div>
 
                     <div className={style.contactoText}>

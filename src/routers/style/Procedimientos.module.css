@@ -1,30 +1,4 @@
-/* =========================
-   VARIABLES DE COLOR (THEME)
-========================= */
 
-:root {
-  --color-bg: #ffffff;
-  --color-text: #222222;
-  --color-primary: #6A1B9A;
-  --color-secondary: #6A1B9A;
-  --color-accent: #8E51FF;
-  --color-hover: #f2f2f2;
-  --color-toast-bg: #333333;
-  --color-btn-whatsapp: #25D366;
-  --shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* 🌙 Modo oscuro automático */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: black;
-    --color-text: #e6e6e6;
-    --color-primary: #8E51FF;
-    --color-secondary: #6A1B9A;
-    --color-hover: rgba(255, 255, 255, 0.1);
-    --color-toast-bg: #222222;
-  }
-}
 
 /* =========================
    ESTRUCTURA GENERAL

@@ -1,11 +1,9 @@
 import React from 'react';
 import style from "./style/Nosotros.module.css";
-import SplitText from "../components/SplitText";
 import { FaStar, FaHeart   } from "react-icons/fa"
 import { LuLeafyGreen } from "react-icons/lu";
 import { GiLipstick } from "react-icons/gi";
 
-import Orb from "../components/Orb";
 
 function Nosotros() {
 
@@ -13,30 +11,12 @@ function Nosotros() {
 
     return (
         <div className={style.nosotrosContainer}>
-            
-            {/* Orb de fondo */}
-            <div className={style.orbBackground}>
-                <Orb hoverIntensity={0} rotateOnHover={true} hue={282} forceHoverState={false} />
-            </div>
 
             {/* Contenido principal */}
             <div className={style.content}>
                 {/* Título animado */}
                 <div className={style.titleNosotros}>
-                    <SplitText
-                        text="¡Sobre nosotros!"
-                        className={style.contentText}
-                        delay={30}
-                        duration={0.6}
-                        ease="power3.out"
-                        splitType="chars"
-                        from={{ opacity: 0, y: 40 }}
-                        to={{ opacity: 1, y: 0 }}
-                        threshold={0.1}
-                        rootMargin="-100px"
-                        textAlign="center"
-                        onLetterAnimationComplete={handleAnimationComplete}
-                    />
+
                 </div>
 
                 {/* Texto principal */}
