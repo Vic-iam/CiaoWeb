@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import 'leaflet/dist/leaflet.css'; 
 import Reserva from './pages/Reserva'
 import Admin from './pages/Admin'
+import CalendarioReserva from './components/calendario/Calendario'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/nosotros' element={<Nosotros />} />
           <Route path='/procedimientos' element={<Procedimientos />} />
+          <Route path='/Calendario' element={<CalendarioReserva />} />
           <Route path='/contactos' element={<Contactos />}  />
           <Route path='/reservas' element={<Reserva />} />
           <Route path='/admin' element={<Admin />} />

@@ -2,18 +2,31 @@ import style from "./style/Nosotros.module.css";
 import { FaStar, FaHeart } from "react-icons/fa";
 import { LuLeafyGreen } from "react-icons/lu";
 import { GiLipstick } from "react-icons/gi";
-import { useReveal } from "../components/ui/usereveal/UseReveal";
+import Loading from "../components/ui/loading/Loading";
+import { useState, useEffect } from "react";
 
 
 function Nosotros() {
+  const [isLoading, setIsLoading] = useState(true);
 
-    useReveal();
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+      }, 2000);
+  
+      return () => clearTimeout(timer);
+    }, []);
 
   return (
-    <section className={`${style.nosotrosContainer} `}>
+
+        <>
+          {isLoading ? (
+            <Loading text="...Cargando" />
+          ) : (
+
+    <section className={style.nosotrosContainer}>
       
-      <div className={`${style.header }
-      `}>
+      <div className={style.header}>
         <h1>Sobre Nosotros</h1>
         <p>
           En CiaoBella trabajamos para resaltar tu belleza natural con
@@ -81,6 +94,8 @@ function Nosotros() {
       </div>
 
     </section>
+      )}
+    </>
   );
 }
 

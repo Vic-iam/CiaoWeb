@@ -1,12 +1,23 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import style from "./style/Procedimientos.module.css";
 import { FaChevronRight, FaWhatsapp } from "react-icons/fa";
+import { GoTriangleLeft, GoTriangleRight } from "react-icons/go";
 import servicios from "../data/servicios.json";
+import Loading from "../components/ui/loading/Loading";
 
 function Procedimientos() {
   const [openIds, setOpenIds] = useState([]);
   const [seleccionados, setSeleccionados] = useState([]);
   const [alerta, setAlerta] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const menuRef = useRef(null);
 
@@ -40,7 +51,7 @@ function Procedimientos() {
     setSeleccionados((prev) =>
       prev.includes(opcion)
         ? prev.filter((item) => item !== opcion)
-        : [...prev, opcion]
+        : [...prev, opcion],
     );
   };
 
@@ -53,7 +64,7 @@ function Procedimientos() {
 
     const numero = "5491123924974";
     const mensaje = encodeURIComponent(
-      `Hola, quiero pedir turno para: ${seleccionados.join(", ")}`
+      `Hola, quiero pedir turno para: ${seleccionados.join(", ")}`,
     );
 
     window.open(`https://wa.me/${numero}?text=${mensaje}`, "_blank");
@@ -69,85 +80,89 @@ function Procedimientos() {
   };
 
   return (
-    <section className={style.serviciosBody}>
-      
-      {/* MENÚ SUPERIOR */}
-      <div className={style.menuWrapper}>
-        <button className={style.scrollBtn} onClick={() => scroll("left")}>
-          ◀
-        </button>
-
-        <div className={style.menuItemContainer} ref={menuRef}>
-          {servicios.map((item) => (
-            <button
-              key={item.id}
-              className={style.menuLink}
-              onClick={() => toggleServicio(item.id)}
-            >
-              {item.nombre}
+    <>
+      {isLoading ? (
+        <Loading text="...Cargando" />
+      ) : (
+        <section className={style.serviciosBody}>
+          <div className={style.menuWrapper}>
+            <button className={style.scrollBtn} onClick={() => scroll("left")}>
+              <GoTriangleLeft />
             </button>
-          ))}
-        </div>
 
-        <button className={style.scrollBtn} onClick={() => scroll("right")}>
-          ▶
-        </button>
-      </div>
-
-      {/* SERVICIOS */}
-      <div className={style.serviciosContainer}>
-        {servicios.map((servicio) => (
-          <div
-            key={servicio.id}
-            className={style.servicioCard}
-            id={`servicio-${servicio.id}`}
-          >
-            <div
-              className={style.servicioHeader}
-              onClick={() => toggleServicio(servicio.id)}
-            >
-              <h3>{servicio.nombre}</h3>
-
-              <FaChevronRight
-                className={`${style.iconArrow} ${
-                  openIds.includes(servicio.id) ? style.open : ""
-                }`}
-              />
+            <div className={style.menuItemContainer} ref={menuRef}>
+              {servicios.map((item) => (
+                <button
+                  key={item.id}
+                  className={style.menuLink}
+                  onClick={() => toggleServicio(item.id)}
+                >
+                  {item.nombre}
+                </button>
+              ))}
             </div>
 
-            <div
-              className={`${style.content} ${
-                openIds.includes(servicio.id) ? style.openContent : ""
-              }`}
-            >
-              <h2 className={style.contentTitle}>Elegí un servicio:</h2>
-
-              <ul className={style.optionsList}>
-                {servicio.opciones.map((opcion, index) => (
-                  <li
-                    key={index}
-                    className={`${style.optionItem} ${
-                      seleccionados.includes(opcion) ? style.selectedOption : ""
-                    }`}
-                    onClick={() => toggleSeleccion(opcion)}
-                  >
-                    {opcion}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <button className={style.scrollBtn} onClick={() => scroll("right")}>
+              <GoTriangleRight />
+            </button>
           </div>
-        ))}
-      </div>
 
-      {/* BOTÓN WHATSAPP */}
-      <button onClick={enviarWhatsApp} className={style.btnWhatsAppFloat}>
-        <FaWhatsapp />
-      </button>
+          <div className={style.serviciosContainer}>
+            {servicios.map((servicio) => (
+              <div
+                key={servicio.id}
+                className={style.servicioCard}
+                id={`servicio-${servicio.id}`}
+              >
+                <div
+                  className={style.servicioHeader}
+                  onClick={() => toggleServicio(servicio.id)}
+                >
+                  <h3>{servicio.nombre}</h3>
 
-      {/* ALERTA */}
-      {alerta && <div className={style.toast}>{alerta}</div>}
-    </section>
+                  <FaChevronRight
+                    className={`${style.iconArrow} ${
+                      openIds.includes(servicio.id) ? style.open : ""
+                    }`}
+                  />
+                </div>
+
+                <div
+                  className={`${style.content} ${
+                    openIds.includes(servicio.id) ? style.openContent : ""
+                  }`}
+                >
+                  <h2 className={style.contentTitle}>Elegí un servicio:</h2>
+
+                  <ul className={style.optionsList}>
+                    {servicio.opciones.map((opcion, index) => (
+                      <li
+                        key={index}
+                        className={`${style.optionItem} ${
+                          seleccionados.includes(opcion)
+                            ? style.selectedOption
+                            : ""
+                        }`}
+                        onClick={() => toggleSeleccion(opcion)}
+                      >
+                        {opcion}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <button onClick={enviarWhatsApp} className={style.btnWhatsAppFloat}>
+            <FaWhatsapp />
+          </button>
+
+          {/* ALERTA */}
+          {alerta && <div className={style.toast}>{alerta}</div>}
+        </section>
+      )}
+    </>
   );
 }
 

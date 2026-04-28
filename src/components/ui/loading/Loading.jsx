@@ -1,12 +1,13 @@
+import { ClockLoader } from "react-spinners";
 import style from "./Loading.module.css";
 
-function Loading({ text }) {
+export default function Loading({ text = "...Cargando" }) {
   return (
     <div className={style.loadingContainer}>
-      <div className={style.spinner}></div>
-      <p>{text}</p>
+      <div className={style.loading}>
+        <ClockLoader size={120} color="var(--text)" />
+        <p>{text}</p>
+      </div>
     </div>
   );
 }
-
-export default Loading;

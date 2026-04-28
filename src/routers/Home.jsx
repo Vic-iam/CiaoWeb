@@ -1,17 +1,18 @@
 import { useState, useEffect } from "react";
 import style from "./style/Home.module.css";
 import { Link } from "react-router-dom";
-import {
-  FaChevronRight,
-  FaStar,
-  FaHeart,
-} from "react-icons/fa";
+import { FaChevronRight, FaStar, FaHeart } from "react-icons/fa";
 import { LuLeafyGreen } from "react-icons/lu";
-import { useReveal } from "../components/ui/usereveal/UseReveal";
-import Loading from "../components/ui/loading/Loading"; 
+import Loading from "../components/ui/loading/Loading";
+import face from "../assets/face.jpg";
 
 function Home() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleLinkClick = () => {
+    setIsOpen(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -21,40 +22,40 @@ function Home() {
     return () => clearTimeout(timer);
   }, []);
 
-  useReveal();
-
   return (
     <>
       {isLoading ? (
-        <Loading/>
+        <Loading text="...Cargando" />
       ) : (
         <div className={style.homeBody}>
-          <section
-            data-reveal
-            className={`${style.hero} ${style.reveal} ${style.fadeUp}`}
-          >
+          <section data-reveal className={style.hero}>
             <div className={style.heroIndex}>
               <h1>Realza tu belleza natural</h1>
               <p>
-                Tratamientos estéticos profesionales con resultados visibles desde la
-                primera sesión.
+                Tratamientos estéticos profesionales con resultados visibles
+                desde la primera sesión.
               </p>
               <div className={style.heroButtons}>
-                <Link to="/procedimientos" className={style.btnPrimary}>
+                <Link
+                  to="/procedimientos"
+                  onClick={handleLinkClick}
+                  className={style.btnPrimary}
+                >
                   Ver servicios <FaChevronRight />
                 </Link>
 
-                <Link to="/" className={style.btnSecondary}>
+                <Link
+                  to="/Calendario"
+                  onClick={handleLinkClick}
+                  className={style.btnSecondary}
+                >
                   Reservar cita
                 </Link>
               </div>
             </div>
           </section>
 
-          <section
-            data-reveal
-            className={`${style.reveal} ${style.fadeUp}`}
-          >
+          <section className={style.reveal}>
             <h2>Servicios destacados</h2>
 
             <div className={style.cards}>
@@ -78,25 +79,29 @@ function Home() {
             </div>
           </section>
 
-          <section
-            data-reveal
-            className={`${style.benefits} ${style.reveal} ${style.fadeUp}`}
-          >
+          <section className={style.benefits}>
             <h3>¿Por qué elegirnos?</h3>
 
             <div className={style.benefitList}>
-              <p>° Atención personalizada</p>
-              <p>° Productos de alta calidad</p>
-              <p>° Profesionales certificados</p>
+              <p>Atención personalizada</p>
+              <p>Productos de alta calidad</p>
+              <p>Profesionales certificados</p>
             </div>
           </section>
 
           <section className={style.testimonials}>
-            <h4>Lo que dicen nuestras clientas</h4>
+            <div className={style.testimonialsCard}>
+              <div className={style.testimonialsText}>
+                <h4>Nuestros resultados</h4>
+                <p>
+                  Descubrí la transformación de nuestras clientas con
+                  tratamientos personalizados y resultados visibles.
+                </p>
+              </div>
 
-            <div className={style.testimonialCard}>
-              <p>“Increíble atención y resultados. Volvería sin dudarlo.”</p>
-              <span>- María</span>
+              <div className={style.testimonialImg}>
+                <img src={face} alt="Resultados estéticos" />
+              </div>
             </div>
           </section>
         </div>

@@ -1,11 +1,28 @@
 import MyMap from "../components/ui/mymap/MyMap";
 import style from "./style/Contacto.module.css";
+import Loading from "../components/ui/loading/Loading";
+import { useState, useEffect } from "react";
 
 function Contactos() {
+  const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+      }, 2000);
+  
+      return () => clearTimeout(timer);
+    }, []);
+
   return (
+
+        <>
+          {isLoading ? (
+            <Loading text="...Cargando" />
+          ) : (
+
     <section className={style.contactoContainer}>
       
-      {/* HEADER */}
       <div className={style.header}>
         <h1>Contacto</h1>
         <p>
@@ -15,7 +32,6 @@ function Contactos() {
         </p>
       </div>
 
-      {/* CARDS */}
       <div className={style.cardContainer}>
         
         <div className={style.card}>
@@ -42,12 +58,13 @@ function Contactos() {
 
       </div>
 
-      {/* MAPA */}
       <div className={style.mapSection}>
         <MyMap />
       </div>
 
     </section>
+          )}
+    </>
   );
 }
 
