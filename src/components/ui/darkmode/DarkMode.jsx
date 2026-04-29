@@ -14,7 +14,6 @@ export default function DarkMode() {
     <button className={style.themeToggle}
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
     >
-        
       {theme === "light" ? <IoMdSunny/> : <IoMdMoon />}
     </button>
   );

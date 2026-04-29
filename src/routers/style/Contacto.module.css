@@ -28,7 +28,6 @@
   color: var(--text);
 }
 
-
 .header {
   text-align: center;
   margin-bottom: 70px;
@@ -45,8 +44,6 @@
   line-height: 1.8;
   color: var(--text-secondary);
 }
-
-
 
 .cardContainer {
   display: grid;
@@ -79,14 +76,12 @@
   line-height: 1.7;
 }
 
-
 .horarioLista {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 8px 15px;
   color: var(--text-secondary);
 }
-
 
 .mapSection {
   margin-top: 60px;

@@ -27,7 +27,6 @@
   color: var(--text);
 }
 
-
 .header {
   text-align: center;
   margin-bottom: 80px;
@@ -47,8 +46,6 @@
   color: var(--text-secondary);
 }
 
-
-
 .section {
   margin-bottom: 70px;
 }
@@ -65,10 +62,6 @@
   margin-bottom: 15px;
   font-size: 1rem;
 }
-
-/* =========================================
-   GRID MISIÓN / VISIÓN
-========================================= */
 
 .gridSection {
   display: grid;
@@ -102,10 +95,6 @@
   color: var(--text-secondary);
 }
 
-/* =========================================
-   LISTA DE DIFERENCIALES
-========================================= */
-
 .features {
   list-style: none;
   padding: 0;
@@ -136,10 +125,6 @@
   font-size: 1.2rem;
   min-width: 20px;
 }
-
-/* =========================================
-   RESPONSIVE
-========================================= */
 
 @media (max-width: 768px) {
   .nosotrosContainer {

@@ -1,0 +1,25 @@
+.errorContainer{
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+}
+
+.errorContainer h2{
+    font-size: 2.4rem;
+    color: var(--error);
+}
+
+.lupaStyle img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.lupaStyle{
+    height: 200px;
+}

@@ -11,9 +11,6 @@
   gap: 20px;
 }
 
-/* =========================
-   MENÚ SUPERIOR
-========================= */
 
 .menuWrapper {
   display: flex;
@@ -56,6 +53,14 @@
   box-shadow: var(--shadow-md);
 }
 
+
+.activeMenuLink {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+}
+
 .scrollBtn {
   width: 42px;
   height: 42px;
@@ -76,9 +81,6 @@
   box-shadow: var(--shadow-md);
 }
 
-/* =========================
-   TARJETAS
-========================= */
 
 .servicioCard {
   border: 1px solid var(--border);
@@ -94,9 +96,7 @@
   box-shadow: var(--shadow-md);
 }
 
-/* =========================
-   CABECERA
-========================= */
+
 
 .servicioHeader {
   display: flex;
@@ -120,9 +120,7 @@
   transform: rotate(90deg);
 }
 
-/* =========================
-   CONTENIDO
-========================= */
+
 
 .content {
   max-height: 0;
@@ -142,9 +140,7 @@
   font-size: 1rem;
 }
 
-/* =========================
-   OPCIONES
-========================= */
+
 
 .optionsList {
   display: flex;
@@ -178,9 +174,6 @@
   font-weight: 500;
 }
 
-/* =========================
-   BOTÓN RESERVAR
-========================= */
 
 .btnReservarFloat {
   position: fixed;

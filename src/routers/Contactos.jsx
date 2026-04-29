@@ -14,7 +14,6 @@ function Contactos() {
     }, []);
 
   return (
-
         <>
           {isLoading ? (
             <Loading text="...Cargando" />

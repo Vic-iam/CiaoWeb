@@ -10,6 +10,7 @@ import 'leaflet/dist/leaflet.css';
 import Reserva from './pages/Reserva'
 import Admin from './pages/Admin'
 import CalendarioReserva from './components/calendario/Calendario'
+import Error from './components/ui/error/Error'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path='/contactos' element={<Contactos />}  />
           <Route path='/reservas' element={<Reserva />} />
           <Route path='/admin' element={<Admin />} />
+          <Route path="*" element={<Error />} />
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -33,7 +33,10 @@ function Procedimientos() {
     setTimeout(() => {
       const menuAltura = menuRef.current?.offsetHeight || 0;
       const posicion =
-        elemento.getBoundingClientRect().top + window.scrollY - menuAltura - 100;
+        elemento.getBoundingClientRect().top +
+        window.scrollY -
+        menuAltura -
+        100;
 
       window.scrollTo({
         top: posicion,
@@ -74,7 +77,9 @@ function Procedimientos() {
           {servicios.map((item) => (
             <button
               key={item.id}
-              className={style.menuLink}
+              className={`${style.menuLink} ${
+                openId === item.id ? style.activeMenuLink : ""
+              }`}
               onClick={() => toggleServicio(item.id)}
             >
               {item.nombre}

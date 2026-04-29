@@ -135,8 +135,8 @@ Hora: ${selectedTime}
             {...register("apellido", {
               required: "Apellido obligatorio",
               minLength: {
-                value: 4,
-                message: "El apellido necesita mínimo 4 caracteres",
+                value: 8,
+                message: "El apellido necesita mínimo 8 caracteres",
               },
             })}
           />
