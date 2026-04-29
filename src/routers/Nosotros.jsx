@@ -11,7 +11,6 @@ function Nosotros() {
 
     useEffect(() => {
       const timer = setTimeout(() => {
-        setIsLoading(false);
       }, 2000);
   
       return () => clearTimeout(timer);

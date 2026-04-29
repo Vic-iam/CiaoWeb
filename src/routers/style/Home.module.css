@@ -160,7 +160,6 @@
   box-shadow: var(--shadow-md);
 }
 
-/* Texto */
 .testimonialsText {
   flex: 1;
   min-height: 500px;
@@ -211,8 +210,6 @@
   .benefits h3,
   .testimonialsText h4{
     font-size: 1.3rem;
-    text-align: center;
-    width: 300px;
   }
   .hero p{
     font-size: 0.9rem;
@@ -225,10 +222,6 @@
 
   .card h3{
     font-size: 1.1rem;
-  }
-
-  .benefitList{
-    width: 400px;
   }
 
     .testimonialsCard {

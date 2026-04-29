@@ -95,7 +95,7 @@ const activeClass = ({ isActive }) =>
             </li>
 
             <li className={style.dateP}>
-              <NavLink to="/Calendario" onClick={handleLinkClick}>
+              <NavLink to="/calendario" onClick={handleLinkClick}>
                 Reservar cita
               </NavLink>
             </li>

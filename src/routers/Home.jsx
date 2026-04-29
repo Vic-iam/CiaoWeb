@@ -10,7 +10,6 @@ function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   const handleLinkClick = () => {
-    setIsOpen(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -45,7 +44,7 @@ function Home() {
                 </Link>
 
                 <Link
-                  to="/Calendario"
+                  to="/calendario"
                   onClick={handleLinkClick}
                   className={style.btnSecondary}
                 >
