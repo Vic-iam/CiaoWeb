@@ -13,12 +13,13 @@ function Home() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-    }, 2000);
+useEffect(() => {
+  const timer = setTimeout(() => {
+    setIsLoading(false);
+  }, 2000);
 
-    return () => clearTimeout(timer);
-  }, []);
+  return () => clearTimeout(timer);
+}, []);
 
   return (
     <>
