@@ -6,13 +6,17 @@ Proyecto realizado para la estetica Ciao Bella
 
 # Caracteristicas principales
 
-.Visualización de servicios estéticos disponibles.
-.Interfaz moderna y responsiva.
-.Reserva de turnos online.
-.Formularios validados.
-.Integración de mapas para ubicación.
-.Indicadores de carga para mejorar la experiencia de usuario.
-.Navegación dinámica entre secciones.
+1.  Visualización de servicios estéticos disponibles.
+2.  Interfaz moderna y responsiva.
+3.  Reserva de turnos online.
+4.  Formularios validados.
+5.  Integración de mapas para ubicación.
+6.  Indicadores de carga para mejorar la experiencia de usuario.
+7.  Navegación dinámica entre secciones.
+
+# Ver online
+
+Puedes ver el proyecto online puede ingresar al link: (https://ciao-web-tau.vercel.app)
 
 ### Instalacion
 
@@ -21,9 +25,13 @@ Proyecto realizado para la estetica Ciao Bella
 3.  Ejecutar el comando `npm install` para instalar las depedencias y crear la carpeta `node_modules`.
 4.  Ejecute el comando `npm run dev` para levantar la app en un entorno local.
 
+# Requisito
+
 > Es necesario contar con la version de Node v24.14.0
 
-Si desea ver el proyecto online puede ingresar al link: (https://ciao-web-tau.vercel.app)
+Puedes verificar tu version con:
+
+> node -v
 
 ### Librerías instaladas
 
@@ -59,7 +67,10 @@ Si desea ver el proyecto online puede ingresar al link: (https://ciao-web-tau.ve
   Indicadores de carga y spinners para mejorar la experiencia de usuario.  
   https://www.davidhu.io/react-spinners/
 
+# Objetivo del proyecto
+
+El objetivo principal fue desarrollar una plataforma web para la estética Ciao Bella, ofreciendo una presencia digital profesional y facilitando la interacción de los clientes con los servicios y reservas del negocio.
 
 # Autor
 
- Desarrolado por Jose Vitriago.
+Desarrolado por Jose Vitriago.
