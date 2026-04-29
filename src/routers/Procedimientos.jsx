@@ -49,12 +49,20 @@ function Procedimientos() {
     if (!servicioSeleccionado) {
       setAlerta("Selecciona un servicio");
       setTimeout(() => setAlerta(null), 3000);
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
-
-    navigate("/calendario", {
-      state: { servicio: servicioSeleccionado },
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
     });
+
+    setTimeout(() => {
+      navigate("/calendario", {
+        state: { servicio: servicioSeleccionado },
+      });
+    }, 500);
   };
 
   const scrollMenu = (direction) => {

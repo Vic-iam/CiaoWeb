@@ -43,6 +43,10 @@ export default function CalendarioReserva() {
   const location = useLocation();
   const servicioInicial = location.state?.servicio || "";
 
+    const handleLinkClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const {
     register,
     handleSubmit,
