@@ -16,6 +16,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: var(--surface);
   box-shadow: var(--shadow-sm);
   border-radius: var(--radius-sm);
   border: var(--border);
@@ -100,6 +101,7 @@
   text-align: center;
   gap: 10px;
   border: 1px solid var(--border);
+  background: var(--surface);
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-sm);
   padding: 10px;
