@@ -2,7 +2,7 @@
   display: flex;
   justify-content:space-around;
   flex-wrap: wrap;
-  background: var(--bg);
+  background: var(--surface);
   color: var(--text);
   padding: 30px 15px;
   border: 1px solid var(--border);

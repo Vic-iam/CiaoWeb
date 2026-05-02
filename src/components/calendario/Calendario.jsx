@@ -97,7 +97,7 @@ Fecha: ${data.fecha.toLocaleDateString()}
 Hora: ${selectedTime}
 `;
 
-    const numero = "5491133973900";
+    const numero = "541123655143";
 
     window.open(
       `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`,
@@ -137,8 +137,8 @@ Hora: ${selectedTime}
             {...register("apellido", {
               required: "Apellido obligatorio",
               minLength: {
-                value: 8,
-                message: "El apellido necesita mínimo 8 caracteres",
+                value: 5,
+                message: "El apellido necesita mínimo 5 caracteres",
               },
             })}
           />

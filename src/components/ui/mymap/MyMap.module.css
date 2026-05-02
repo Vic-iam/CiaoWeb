@@ -9,6 +9,7 @@
 
   border: 1px solid var(--border);
   box-shadow: var(--shadow-lg);
+  z-index: 2
 }
 
 .leafletContainer {
@@ -23,7 +24,7 @@
 
 .popupContent p {
   margin-bottom: 10px;
-  color: var(--text);
+  color: var(--text-secondary);
   font-size: 0.95rem;
 }
 
@@ -32,7 +33,7 @@
   padding: 8px 14px;
 
   background: var(--primary);
-  color: white;
+  color: var(--text-secondary);
   text-decoration: none;
 
   border-radius: var(--radius-sm);
