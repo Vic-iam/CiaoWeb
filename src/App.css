@@ -7,7 +7,7 @@ body{
     background: var(--bg);
     color: var(--text);
     font-family: Arial, Helvetica, sans-serif;
-    transition: all 0.3 ease;
+    transition: all 0.3s ease;
 }
 
 
