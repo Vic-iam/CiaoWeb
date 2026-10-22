@@ -213,11 +213,23 @@
 }
 
 .calendar :global(.rdp-months) {
+  width: 100%;
+  max-width: none;
   justify-content: center;
 }
 
 .calendar :global(.rdp-month) {
   width: 100%;
+}
+
+.calendar :global(.rdp-month_grid) {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.calendar :global(.rdp-day) {
+  width: auto;
+  height: 42px;
 }
 
 .calendar :global(.rdp-month_caption) {
