@@ -1,9 +1,13 @@
 .Header {
   position: fixed;
-  top: 0%;
+  top: 0;
   width: 100%;
   z-index: 999;
   transition: transform 0.3s ease;
+}
+
+.hide {
+  transform: translateY(-100%);
 }
 
 .Nav {
@@ -86,7 +90,7 @@
   padding: 15px;
   background: var(--primary);
   border-radius: 10px;
-  transition: all 0.3 ease;
+  transition: background 0.3s ease;
 }
 
 .dateP:hover {
@@ -154,5 +158,15 @@
   .itemToggle {
     display: block;
     z-index: 1000;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .Header,
+  .link a,
+  .link a::after,
+  .dateP,
+  .containerLink {
+    transition: none;
   }
 }

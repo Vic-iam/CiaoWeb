@@ -85,9 +85,6 @@
 
 .mapSection {
   margin-top: 60px;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
 }
 
 

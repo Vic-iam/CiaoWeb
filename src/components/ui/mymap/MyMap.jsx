@@ -1,41 +1,65 @@
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { Icon } from "leaflet";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
 import style from "./MyMap.module.css";
-import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
+
+const position = [-34.596649866952575, -58.44277223304099];
+const address = "Serrano 479, CABA";
+const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${position[0]},${position[1]}`;
+
+const markerIcon = new Icon({
+  iconRetinaUrl: new URL("leaflet/dist/images/marker-icon-2x.png", import.meta.url).href,
+  iconUrl: new URL("leaflet/dist/images/marker-icon.png", import.meta.url).href,
+  shadowUrl: new URL("leaflet/dist/images/marker-shadow.png", import.meta.url).href,
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41],
+});
 
 function MyMap() {
-  const position = [-34.596649866952575, -58.44277223304099];
-
-  const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${position[0]},${position[1]}`;
-
-  delete L.Icon.Default.prototype._getIconUrl;
-
-  L.Icon.Default.mergeOptions({
-    iconRetinaUrl: new URL('leaflet/dist/images/marker-icon-2x.png', import.meta.url).href,
-    iconUrl: new URL('leaflet/dist/images/marker-icon.png', import.meta.url).href,
-    shadowUrl: new URL('leaflet/dist/images/marker-shadow.png', import.meta.url).href,
-  });
-
   return (
-    <div className={style.mapWrapper}>
-      <MapContainer center={position} zoom={15} scrollWheelZoom={true} className={style.leafletContainer}>
-        <TileLayer
-          url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-          attribution='&copy; <a href="https://carto.com/">CARTO</a>'
-        />
+    <section className={style.locationCard} aria-label="Ubicación de CiaoBella">
+      <div className={style.locationInfo}>
+        <span className={style.eyebrow}>VENÍ A CONOCERNOS</span>
+        <h2>Te esperamos</h2>
+        <p className={style.address}>{address}</p>
+        <p className={style.locationHint}>
+          Consultá cómo llegar y encontrá la mejor ruta desde tu ubicación.
+        </p>
+        <a
+          className={style.directionsBtn}
+          href={googleMapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Cómo llegar
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
 
-        <Marker position={position}>
-          <Popup>
-            <div className={style.popupContent}>
-              <p><strong>Estamos aquí </strong></p>
-              <a style={{color: "white"} } href={googleMapsUrl} target="_blank" rel="noopener noreferrer" className={style.directionsBtn}>
-                Cómo llegar
-              </a>
-            </div>
-          </Popup>
-        </Marker>
-      </MapContainer>
-    </div>
+      <div className={style.mapWrapper}>
+        <MapContainer
+          center={position}
+          zoom={16}
+          scrollWheelZoom={false}
+          className={style.leafletContainer}
+          aria-label={`Mapa de ubicación: ${address}`}
+        >
+          <TileLayer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          />
+          <Marker position={position} icon={markerIcon}>
+            <Popup>
+              <strong>CiaoBella</strong>
+              <br />
+              {address}
+            </Popup>
+          </Marker>
+        </MapContainer>
+      </div>
+    </section>
   );
 }
 

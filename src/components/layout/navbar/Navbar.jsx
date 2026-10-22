@@ -70,8 +70,11 @@ const activeClass = ({ isActive }) =>
           <span className={style.bella}>BELLA</span>
         </div>
 
-        <div className={ `${style.containerLink} ${isOpen ? style.open : ""}` }
-        ref={menuRef}>
+        <div
+          id="menu-principal"
+          className={`${style.containerLink} ${isOpen ? style.open : ""}`}
+          ref={menuRef}
+        >
           <ul className={style.link}>
             <li>
               <NavLink to="/" className={activeClass} onClick={handleLinkClick}>
@@ -106,6 +109,10 @@ const activeClass = ({ isActive }) =>
 
         <button
           className={style.itemToggle}
+          type="button"
+          aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={isOpen}
+          aria-controls="menu-principal"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <FaTimes /> : <FaBars />}

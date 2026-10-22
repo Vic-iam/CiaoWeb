@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase";
 import style from "./index.module.css"
 
 export default function Reserva() {
-  const navigate = useNavigate();
   const location = useLocation();
 
   // Traemos los servicios seleccionados desde la URL
   const query = new URLSearchParams(location.search);
   const serviciosParam = query.get("servicios") || "";
-  const serviciosSeleccionados = serviciosParam.split(",");
+  const serviciosSeleccionados = serviciosParam
+    .split(",")
+    .map((servicio) => servicio.trim())
+    .filter(Boolean);
 
   // Datos del cliente
   const [nombre, setNombre] = useState("");

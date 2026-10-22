@@ -1,5 +1,5 @@
 .serviciosBody {
-  padding: 120px 20px;
+  padding: 120px 20px 180px;
   max-width: 1100px;
   margin: 0 auto;
   color: var(--text);
@@ -102,7 +102,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   padding: 22px 24px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  font: inherit;
   cursor: pointer;
 }
 
@@ -123,15 +129,24 @@
 
 
 .content {
-  max-height: 0;
-  overflow: hidden;
-  padding: 0 24px;
-  transition: max-height 0.35s ease, padding 0.35s ease;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
 }
 
 .openContent {
-  max-height: 500px;
-  padding: 0 24px 24px;
+  grid-template-rows: 1fr;
+}
+
+.contentInner {
+  min-height: 0;
+  overflow: hidden;
+  padding: 0 24px;
+  transition: padding 0.35s ease;
+}
+
+.openContent .contentInner {
+  padding-bottom: 24px;
 }
 
 .contentTitle {
@@ -147,22 +162,26 @@
   flex-direction: column;
   gap: 12px;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .optionItem {
+  display: block;
+  width: 100%;
   padding: 14px 18px;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-
   background: var(--surface-2);
   color: var(--text);
-
+  font: inherit;
+  text-align: left;
   cursor: pointer;
-
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.optionItem:hover {
+.optionItem:hover,
+.optionItem:focus-visible {
   transform: translateX(4px);
   box-shadow: var(--shadow-sm);
 }
@@ -172,6 +191,30 @@
   border-color: var(--primary);
   color: var(--primary);
   font-weight: 500;
+}
+
+.menuLink:focus-visible,
+.scrollBtn:focus-visible,
+.servicioHeader:focus-visible,
+.optionItem:focus-visible,
+.btnReservarFloat:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+}
+
+.selectionSummary {
+  position: fixed;
+  right: 25px;
+  bottom: 92px;
+  max-width: min(360px, calc(100vw - 50px));
+  margin: 0;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow-md);
+  z-index: 998;
 }
 
 
@@ -208,7 +251,7 @@
 
 .toast {
   position: fixed;
-  bottom: 95px;
+  bottom: 160px;
   right: 25px;
 
   padding: 14px 18px;
@@ -223,7 +266,7 @@
 
 @media (max-width: 768px) {
   .serviciosBody {
-    padding: 90px 15px;
+    padding: 90px 15px 180px;
   }
 
   .servicioHeader {
@@ -240,8 +283,29 @@
     bottom: 15px;
   }
 
+  .selectionSummary {
+    right: 15px;
+    bottom: 82px;
+    max-width: calc(100vw - 30px);
+  }
+
   .toast {
     right: 15px;
-    bottom: 80px;
+    bottom: 140px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menuItemContainer,
+  .menuLink,
+  .scrollBtn,
+  .servicioCard,
+  .iconArrow,
+  .content,
+  .contentInner,
+  .optionItem,
+  .btnReservarFloat {
+    scroll-behavior: auto;
+    transition: none;
   }
 }
